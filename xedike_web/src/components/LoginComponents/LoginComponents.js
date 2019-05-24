@@ -3,6 +3,7 @@ import {Button, Checkbox, Form, Icon, Input, Modal} from 'antd';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {userActions} from "../../actions/userActions";
+import './LoginComponents.css';
 
 class LoginComponents extends Component {
     constructor(props) {
@@ -42,8 +43,8 @@ class LoginComponents extends Component {
 
     render() {
         const {getFieldDecorator} = this.props.form;
-        const { loggingIn } = this.props;
-        const { username, password, submitted } = this.state;
+        const {loggingIn} = this.props;
+        const {username, password, submitted} = this.state;
         return (
             <Modal
                 visible={true}
@@ -109,11 +110,12 @@ class LoginComponents extends Component {
 }
 
 function mapStateToProps(state) {
-    const { loggingIn } = state.authentication;
+    const {loggingIn} = state.authentication;
     return {
         loggingIn
     };
 }
+
 export const LoginPassenger = Form.create({})(LoginComponents);
 const connectedLoginPage = connect(mapStateToProps)(LoginPassenger);
 export default connectedLoginPage;

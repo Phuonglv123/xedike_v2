@@ -1,0 +1,49 @@
+#loginComponent {
+  .text-errors {
+    color: red;
+  }
+
+  .header-login {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    span {
+      span {
+        color: #1890ff;
+      }
+    }
+  }
+
+  #components-form-demo-normal-login {
+    .login-form {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+
+    .login-form-forgot {
+      float: right;
+    }
+
+    .login-form-button {
+      width: 100%;
+      height: 50px;
+    }
+  }
+}
+
+
+#registerComponent {
+  .header-register {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .choose-register {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+}
+

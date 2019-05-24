@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {Button, Checkbox, Col, Form, Icon, Input, Row} from "antd";
+import {thisTypeAnnotation} from "@babel/types";
 
 class PassengerAccount extends Component {
 
     constructor(props) {
         super(props);
-
     }
 
     handleSubmit = e => {
