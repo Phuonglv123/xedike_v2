@@ -66,6 +66,7 @@ class LoginComponents extends Component {
                                     <div className="label-account">
                                         <span>UserName</span>
                                         <Input
+                                            name="username" value={username} onChange={this.handleChange}
                                             prefix={<Icon type="user"
                                                           style={{color: 'rgba(0,0,0,.25)'}}/>}
                                             placeholder="Username" name="username"/>
@@ -79,6 +80,7 @@ class LoginComponents extends Component {
                                     <div className="label-account">
                                         <span>Password</span>
                                         <Input
+                                            name="password" value={password} onChange={this.handleChange}
                                             prefix={<Icon type="lock"
                                                           style={{color: 'rgba(0,0,0,.25)'}}/>}
                                             type="password" placeholder="Password" name="password"/>
@@ -106,6 +108,12 @@ class LoginComponents extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    const { loggingIn } = state.authentication;
+    return {
+        loggingIn
+    };
+}
 export const LoginPassenger = Form.create({})(LoginComponents);
-
-export default LoginPassenger;
+const connectedLoginPage = connect(mapStateToProps)(LoginPassenger);
+export default connectedLoginPage;
