@@ -1,23 +1,59 @@
 import React, {Component} from 'react';
 import {Button, Checkbox, Col, Form, Icon, Input, Row} from "antd";
-import {thisTypeAnnotation} from "@babel/types";
+import {userActions} from "../../actions/userActions";
+import {connect} from "react-redux";
 
 class PassengerAccount extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            passenger: {
+                firstname: '',
+                lastname: '',
+                username: '',
+                password: '',
+                confirmedpassword: '',
+                phone: '',
+                birthday: '',
+
+
+            },
+            submitted: false,
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+        const {name, value} = event.target;
+        const {passenger} = this.state;
+        this.setState({
+            passenger: {
+                ...passenger,
+                [name]: value
+            }
+        });
     }
 
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields(async (err, values) => {
             if (!err) {
+                this.setState({submitted: true});
+                const {passenger} = this.state;
+                const {dispatch} = this.props;
+                if (passenger.firstname && passenger.lastname && passenger.username && passenger.password && passenger.confirmedpassword && passenger.phone && passenger.birthday) {
+                    dispatch(userActions.registerPassenger(passenger));
+                    this.props.onClose();
+                }
             }
         });
     };
 
     render() {
         const {getFieldDecorator} = this.props.form;
+        const {passenger} = this.state;
         return (
             <div id='loginComponent'>
                 <div className='header-login'>
@@ -35,7 +71,8 @@ class PassengerAccount extends Component {
                                     <Input
                                         prefix={<Icon type="user"
                                                       style={{color: 'rgba(0,0,0,.25)'}}/>}
-                                        placeholder="Username" name="username"/>
+                                        placeholder="Username" name="username" value={passenger.username}
+                                        onChange={this.handleChange}/>
                                 </div>
                             )}
                         </Form.Item>
@@ -49,6 +86,8 @@ class PassengerAccount extends Component {
                                         prefix={<Icon type="lock"
                                                       style={{color: 'rgba(0,0,0,.25)'}}/>}
                                         type="password" placeholder="Password" name="password"
+                                        value={passenger.password}
+                                        onChange={this.handleChange}
                                     />
                                 </div>
                             )}
@@ -63,6 +102,8 @@ class PassengerAccount extends Component {
                                         prefix={<Icon type="lock"
                                                       style={{color: 'rgba(0,0,0,.25)'}}/>}
                                         type="password" placeholder="Re-Password" name="confirmedpassword"
+                                        value={passenger.confirmedpassword}
+                                        onChange={this.handleChange}
                                     />
                                 </div>
                             )}
@@ -79,6 +120,8 @@ class PassengerAccount extends Component {
                                                 prefix={<Icon type="lock"
                                                               style={{color: 'rgba(0,0,0,.25)'}}/>}
                                                 type="text" placeholder="first name" name="firstname"
+                                                value={passenger.firstname}
+                                                onChange={this.handleChange}
                                             />
                                         </div>
                                     )}
@@ -95,6 +138,8 @@ class PassengerAccount extends Component {
                                                 prefix={<Icon type="lock"
                                                               style={{color: 'rgba(0,0,0,.25)'}}/>}
                                                 type="text" placeholder="Last Name" name="lastname"
+                                                value={passenger.lastname}
+                                                onChange={this.handleChange}
                                             />
                                         </div>
                                     )}
@@ -113,6 +158,8 @@ class PassengerAccount extends Component {
                                                 prefix={<Icon type="lock"
                                                               style={{color: 'rgba(0,0,0,.25)'}}/>}
                                                 type="text" placeholder="Phone Number" name="phone"
+                                                value={passenger.phone}
+                                                onChange={this.handleChange}
                                             />
                                         </div>
                                     )}
@@ -129,6 +176,8 @@ class PassengerAccount extends Component {
                                                 prefix={<Icon type="lock"
                                                               style={{color: 'rgba(0,0,0,.25)'}}/>}
                                                 type="text" placeholder="BirthDay" name="birthday"
+                                                value={passenger.birthday}
+                                                onChange={this.handleChange}
                                             />
                                         </div>
                                     )}
@@ -154,4 +203,13 @@ class PassengerAccount extends Component {
     }
 }
 
-export default PassengerAccount;
+function mapStateToProps(state) {
+    const {registering} = state.registration;
+    return {
+        registering
+    };
+}
+
+export const registerPassenger = Form.create({})(PassengerAccount);
+const connectedPassenger = connect(mapStateToProps)(registerPassenger);
+export default connectedPassenger;

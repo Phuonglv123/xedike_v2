@@ -1,12 +1,12 @@
-import { userConstants } from '../contants/userContants';
-import { userService } from '../service/usersService';
-import { alertActions } from './alertActions';
-import { history } from '../helpers/history';
+import {userConstants} from '../contants/userContants';
+import {userService} from '../service/usersService';
+import {alertActions} from './alertActions';
 
 export const userActions = {
     login,
     logout,
-    register,
+    registerPassenger,
+    registerDriver,
     getAll,
     delete: _delete
 };
@@ -19,8 +19,6 @@ function login(username, password) {
             .then(
                 user => {
                     dispatch(success(user));
-                    history.push('/');
-                    console.log(success(user))
                 },
                 error => {
                     dispatch(failure(error));
@@ -39,15 +37,36 @@ function logout() {
     return { type: userConstants.LOGOUT };
 }
 
-function register(user) {
+function registerPassenger(user) {
     return dispatch => {
         dispatch(request(user));
 
-        userService.register(user)
+        userService.registerPassenger(user)
             .then(
                 user => {
                     dispatch(success());
-                    history.push('/login');
+                    dispatch(alertActions.success('Registration successful'));
+                },
+                error => {
+                    dispatch(failure(error));
+                    dispatch(alertActions.error(error));
+                }
+            );
+    };
+
+    function request(user) { return { type: userConstants.REGISTER_REQUEST, user } }
+    function success(user) { return { type: userConstants.REGISTER_SUCCESS, user } }
+    function failure(error) { return { type: userConstants.REGISTER_FAILURE, error } }
+}
+
+function registerDriver(user) {
+    return dispatch => {
+        dispatch(request(user));
+
+        userService.registerDriver(user)
+            .then(
+                user => {
+                    dispatch(success());
                     dispatch(alertActions.success('Registration successful'));
                 },
                 error => {

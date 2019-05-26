@@ -1,0 +1,36 @@
+.background-home {
+  height: 180px;
+  width: 100%;
+  background-color: #1890ff;
+}
+
+.form-booking {
+  height: 300px;
+  width: 90%;
+  background-color: white;
+  box-shadow: 0 2px 6px 0 rgba(138, 138, 138, 0.25);
+  margin: -100px auto;
+}
+
+.background-top-form img {
+  width: 100%;
+}
+
+.tab-form-book {
+  margin-top: -50px;
+}
+
+.promotion-car {
+  text-align: center;
+  margin-top: 11em;
+  width: 100%;
+  padding: 40px;
+}
+
+.book-route {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*# sourceMappingURL=HomeScene.css.map */

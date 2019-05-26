@@ -1,9 +1,10 @@
-import { authHeader } from '../helpers/auth';
+import {authHeader} from '../helpers/auth';
 
 export const userService = {
     login,
     logout,
-    register,
+    registerPassenger,
+    registerDriver,
     getAll,
     getById,
     update,
@@ -13,8 +14,8 @@ export const userService = {
 function login(username, password) {
     const requestOptions = {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({username, password})
     };
 
     return fetch(`http://localhost:4000/api/home/login`, requestOptions)
@@ -30,6 +31,7 @@ function login(username, password) {
 function logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('user');
+
 }
 
 function getAll() {
@@ -50,24 +52,35 @@ function getById(id) {
     return fetch(`/users/${id}`, requestOptions).then(handleResponse);
 }
 
-function register(user) {
+function registerPassenger(user) {
     const requestOptions = {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(user)
     };
 
-    return fetch(`/users/register`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:4000/api/passenger/register`, requestOptions).then(handleResponse);
+}
+
+function registerDriver(user) {
+    const requestOptions = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(user)
+    };
+
+    return fetch(`http://localhost:4000/api/driver/register`, requestOptions).then(handleResponse);
 }
 
 function update(user) {
     const requestOptions = {
         method: 'PUT',
-        headers: { ...authHeader(), 'Content-Type': 'application/json' },
+        headers: {...authHeader(), 'Content-Type': 'application/json'},
         body: JSON.stringify(user)
     };
 
-    return fetch(`/users/${user.id}`, requestOptions).then(handleResponse);;
+    return fetch(`/users/${user.id}`, requestOptions).then(handleResponse);
+    ;
 }
 
 // prefixed function name with underscore because delete is a reserved word in javascript

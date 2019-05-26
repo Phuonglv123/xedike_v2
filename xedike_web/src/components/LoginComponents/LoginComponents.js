@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Button, Checkbox, Form, Icon, Input, Modal} from 'antd';
-import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {userActions} from "../../actions/userActions";
 import './LoginComponents.css';
@@ -36,6 +35,7 @@ class LoginComponents extends Component {
                 const {dispatch} = this.props;
                 if (username && password) {
                     dispatch(userActions.login(username, password));
+                    this.props.onClose();
                 }
             }
         });
@@ -43,8 +43,7 @@ class LoginComponents extends Component {
 
     render() {
         const {getFieldDecorator} = this.props.form;
-        const {loggingIn} = this.props;
-        const {username, password, submitted} = this.state;
+        const {username, password} = this.state;
         return (
             <Modal
                 visible={true}
@@ -70,7 +69,7 @@ class LoginComponents extends Component {
                                             name="username" value={username} onChange={this.handleChange}
                                             prefix={<Icon type="user"
                                                           style={{color: 'rgba(0,0,0,.25)'}}/>}
-                                            placeholder="Username" name="username"/>
+                                            placeholder="Username"/>
                                     </div>
                                 )}
                             </Form.Item>
@@ -84,7 +83,7 @@ class LoginComponents extends Component {
                                             name="password" value={password} onChange={this.handleChange}
                                             prefix={<Icon type="lock"
                                                           style={{color: 'rgba(0,0,0,.25)'}}/>}
-                                            type="password" placeholder="Password" name="password"/>
+                                            type="password" placeholder="Password"/>
                                     </div>
                                 )}
                             </Form.Item>

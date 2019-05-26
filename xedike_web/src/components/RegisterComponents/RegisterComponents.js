@@ -16,9 +16,9 @@ class RegisterComponents extends Component {
 
     renderTypeAccount() {
         if (this.state.isType === 'passenger') {
-            return <PassengerAccount/>
+            return <PassengerAccount onClose={this.props.onClose}/>
         } else if (this.state.isType === 'driver') {
-            return <DriverAccount/>
+            return <DriverAccount onClose={this.props.onClose}/>
         }
     }
 

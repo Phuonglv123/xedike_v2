@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
-import {Router, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import {history} from '../../helpers/history';
 import {alertActions} from '../../actions/alertActions';
-import {PrivateRoute} from './PrivateRoute';
-import HomeScene from "../../scene/HomeScene/HomeScene";
-import {Layout, Menu, Breadcrumb} from 'antd';
+import {Layout, Menu} from 'antd';
 import LoginComponents from '../LoginComponents/LoginComponents';
+import RegisterComponents from "../RegisterComponents/RegisterComponents";
+import {userActions} from "../../actions/userActions";
+import {userService} from "../../service/usersService";
+import AppUrl from "./AppUrl";
+import HomeScene from "../../scene/HomeScene/HomeScene";
 
-const {Header, Content, Footer} = Layout;
+const {Header, Content} = Layout;
 
 class AppRoute extends Component {
     constructor(props) {
@@ -27,29 +30,60 @@ class AppRoute extends Component {
         });
     }
 
+    componentDidMount() {
+        this.props.dispatch(userActions.getAll());
+    }
+
+    onLogOut = e => {
+        userService.logout();
+        window.location.reload();
+    }
+
     render() {
-        const {alert} = this.props;
+        console.log(this.props.user)
         return (
             <Layout className="layout" id='components-layout-demo-top'>
                 <Header>
-                    <div className="logo"/>
-                    <Menu
+                    <div className="logo">
+                        <h2>Share Car</h2>
+                    </div>
+                    {this.props.user ? <Menu
                         theme="dark"
                         mode="horizontal"
-                        defaultSelectedKeys={['2']}
+                        defaultSelectedKeys={['Home']}
                         style={{lineHeight: '64px'}}
                     >
-                        <Menu.Item key="1">nav 1</Menu.Item>
+                        <Menu.Item key="Home">Home</Menu.Item>
+                        <Menu.Item key="Logout" onClick={this.onLogOut.bind(this)}>Log out</Menu.Item>
+                    </Menu> : <Menu
+                        theme="dark"
+                        mode="horizontal"
+                        defaultSelectedKeys={['Home']}
+                        style={{lineHeight: '64px'}}
+                    >
+                        <Menu.Item key="1">Home</Menu.Item>
                         <Menu.Item key="2" onClick={() => {
                             this.setState({signin: !this.state.signin})
                         }}>sign in</Menu.Item>
-                        <Menu.Item key="3">sign up</Menu.Item>
-                    </Menu>
+                        <Menu.Item key="3" onClick={() => {
+                            this.setState({signup: !this.state.signup})
+                        }}>sign up</Menu.Item>
+                    </Menu>}
+
                 </Header>
-                <Content style={{padding: '0 50px'}}>
-                    <div style={{background: '#fff', padding: 24, minHeight: 280}}>Content</div>
+                <Content>
+                    <div style={{background: '#fff', minHeight: '100vh'}}>
+                        <Router>
+                            <Switch>
+                                <Route exact path={AppUrl.home()} component={HomeScene}/>
+                            </Switch>
+                        </Router>
+                    </div>
                     {this.state.signin ? <LoginComponents onClose={() => {
                         this.setState({signin: !this.state.signin})
+                    }}/> : null}
+                    {this.state.signup ? <RegisterComponents onClose={() => {
+                        this.setState({signup: !this.state.signup})
                     }}/> : null}
                 </Content>
             </Layout>
@@ -59,41 +93,13 @@ class AppRoute extends Component {
 }
 
 function mapStateToProps(state) {
-    const {alert} = state;
+    const {users, authentication} = state;
+    const {user} = authentication;
     return {
-        alert
+        user,
+        users
     };
 }
 
 const connectedApp = connect(mapStateToProps)(AppRoute);
 export default connectedApp
-
-
-{/*<div className="jumbotron">*/
-}
-{/*    <div className="container">*/
-}
-{/*        <div className="col-sm-8 col-sm-offset-2">*/
-}
-{/*            {alert.message &&*/
-}
-{/*            <div className={`alert ${alert.type}`}>{alert.message}</div>*/
-}
-{/*            }*/
-}
-{/*            <Router history={history}>*/
-}
-{/*                <div>*/
-}
-{/*                    <Route exact path="/" component={HomeScene}/>*/
-}
-{/*                </div>*/
-}
-{/*            </Router>*/
-}
-{/*        </div>*/
-}
-{/*    </div>*/
-}
-{/*</div>*/
-}
