@@ -1,5 +1,6 @@
 import {authHeader} from '../helpers/auth';
-
+import config from "../ultils/config/config";
+let apiUrl = config.API_URL;
 export const userService = {
     login,
     logout,
@@ -12,13 +13,14 @@ export const userService = {
 };
 
 function login(username, password) {
+
     const requestOptions = {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({username, password})
     };
 
-    return fetch(`http://localhost:4000/api/home/login`, requestOptions)
+    return fetch(`${apiUrl}home/login`, requestOptions)
         .then(handleResponse)
         .then(user => {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
@@ -59,7 +61,7 @@ function registerPassenger(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch(`http://localhost:4000/api/passenger/register`, requestOptions).then(handleResponse);
+    return fetch(`${apiUrl}passenger/register`, requestOptions).then(handleResponse);
 }
 
 function registerDriver(user) {
@@ -69,7 +71,7 @@ function registerDriver(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch(`http://localhost:4000/api/driver/register`, requestOptions).then(handleResponse);
+    return fetch(`${apiUrl}driver/register`, requestOptions).then(handleResponse);
 }
 
 function update(user) {

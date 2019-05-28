@@ -30,11 +30,10 @@ class HomeScene extends Component {
             method: 'get',
             url: 'http://localhost:4000/api/trip/allroute',
             responseType: 'stream'
-        })
+        });
         this.setState({
             data: res.data
         });
-        console.log(this.state.data[0].locationFrom)
     }
 
     renderRoute() {
@@ -98,10 +97,12 @@ class HomeScene extends Component {
                                                 <Input placeholder='To'/>
                                             </Col>
                                             <Col span={4}>
-                                                <DatePicker style={{width: '100%'}} onChange={this.onChangeDate()} />
+                                                <DatePicker style={{width: '100%'}}
+                                                            onChange={this.onChangeDate.bind(this)}/>
                                             </Col>
                                             <Col span={4}>
-                                                <DatePicker style={{width: '100%'}} onChange={this.onChangeDate()} />
+                                                <DatePicker style={{width: '100%'}}
+                                                            onChange={this.onChangeDate.bind(this)}/>
                                             </Col>
                                             <Col span={3}>
                                                 <Button type='primary' icon='send' onClick={() => {

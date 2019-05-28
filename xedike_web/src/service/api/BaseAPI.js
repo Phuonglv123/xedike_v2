@@ -1,12 +1,12 @@
-import Config from "../../config/Config";
 import axios from "axios";
 import {Modal} from 'antd';
-import AppUrl from "../../components/Route/AppURL";
+import config from "../../ultils/config/config";
+import AppUrl from '../../components/appRoute/AppUrl'
 
 
 export default class BaseAPI {
     constructor() {
-        this.apiUrl = Config.API_URL;
+        this.apiUrl = config.API_URL;
         const {detect} = require('detect-browser');
         this.browser = detect();
     }
@@ -50,7 +50,7 @@ export default class BaseAPI {
                 // });
             }
             if (res.status === 401) {
-                AppUrl.history.push(AppUrl.login());
+                AppUrl.history.push(AppUrl.home());
                 return res.data;
                 // window.location = AppUrl.login();
             }
