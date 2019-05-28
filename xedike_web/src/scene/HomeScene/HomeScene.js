@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import './HomeScene.css'
-import {Tabs, Icon, Radio, Row, Col, Input, Button, Card, Divider} from 'antd';
+import {Tabs, Icon, Radio, Row, Col, Input, Button, Card, Divider, DatePicker} from 'antd';
 import axios from 'axios';
+import AppUrl from "../../components/appRoute/AppUrl";
 
 
 const RadioGroup = Radio.Group;
@@ -62,9 +63,13 @@ class HomeScene extends Component {
         )
     }
 
+    onChangeDate(date, dateString) {
+        console.log(date, dateString);
+    }
+
     render() {
         return (
-            <div>
+            <div className='component-home'>
                 <div>
                     <div className='background-home'>
 
@@ -76,8 +81,8 @@ class HomeScene extends Component {
                         <div className='tab-form-book'>
                             <Tabs defaultActiveKey="1">
                                 <TabPane tab={<h3><Icon type="car"/> Car</h3>} key="1">
-                                    <div>
-                                        <h4>Search car</h4>
+                                    <div style={{margin: '20px'}}>
+                                        <h2>Search car</h2>
                                         <RadioGroup onChange={this.onChange} value={this.state.radioValue}>
                                             <Radio value='oneway'>One way</Radio>
                                             <Radio value='roundtrip'>Round trip</Radio>
@@ -86,20 +91,22 @@ class HomeScene extends Component {
                                     <div>
                                         <Row gutter={16}>
                                             <Col span={6}>
-                                                <Input/>
+                                                <Input placeholder='From'/>
                                             </Col>
                                             <Col span={1}><Button shape="circle" icon="swap"/></Col>
                                             <Col span={6}>
-                                                <Input/>
+                                                <Input placeholder='To'/>
                                             </Col>
                                             <Col span={4}>
-                                                <Input/>
+                                                <DatePicker style={{width: '100%'}} onChange={this.onChangeDate()} />
                                             </Col>
                                             <Col span={4}>
-                                                <Input/>
+                                                <DatePicker style={{width: '100%'}} onChange={this.onChangeDate()} />
                                             </Col>
                                             <Col span={3}>
-                                                <Button type='primary' icon='send'>Seacrh</Button>
+                                                <Button type='primary' icon='send' onClick={() => {
+                                                    this.props.history.push(AppUrl.searchRoute())
+                                                }}>Seacrh</Button>
                                             </Col>
                                         </Row>
                                     </div>
