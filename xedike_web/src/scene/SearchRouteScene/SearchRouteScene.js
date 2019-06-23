@@ -2,28 +2,37 @@ import React, {Component} from 'react';
 import {Button, Card, Col, DatePicker, Icon, Input, Menu, Row} from "antd";
 import AppUrl from "../../components/appRoute/AppUrl";
 import './SearchRoute.css';
-import axios from "axios";
+import {connect} from "react-redux";
+import TripsService from "../../service/tripsService";
 
-const SubMenu = Menu.SubMenu;
 
 class SearchRouteScene extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            data: [],
         }
     }
 
 
     async componentDidMount() {
-        let res = await axios({
-            method: 'get',
-            url: 'http://localhost:4000/api/trip/allroute',
-            responseType: 'stream'
-        })
+        let res = await TripsService.getAllTrip();
         this.setState({
-            data: res.data
+            data: res
         });
+    };
+
+    getBookTrip = async (i) => {
+        const id_passenger = this.props.user.payload.id;
+        let res = await TripsService.bookTripId(i._id,{
+            accountID: id_passenger,
+            locationGetIn: `${i.locationFrom}`,
+            locationGetOff: `${i.locationTo}`,
+            paymentMethod: "cash",
+            notes: "test",
+        })
+        debugger
+        console.log(res)
     }
 
     onChangeDate(date, dateString) {
@@ -31,7 +40,7 @@ class SearchRouteScene extends Component {
     }
 
     render() {
-        console.log(this.state.data)
+
         return (
             <div className='component-search'>
                 <div>
@@ -107,7 +116,9 @@ class SearchRouteScene extends Component {
                                                 </div>
                                                 <div>
                                                     <div>
-                                                        <Button type='primary'> Select seat</Button>
+                                                        <Button type='primary'
+                                                                onClick={this.getBookTrip.bind(this, i)}> Select
+                                                            seat</Button>
                                                     </div>
                                                     <span>{i.availableSeats}</span>
                                                 </div>
@@ -127,4 +138,16 @@ class SearchRouteScene extends Component {
     }
 }
 
-export default SearchRouteScene;
+
+function mapStateToProps(state) {
+    const {users, authentication} = state;
+    const {user} = authentication;
+    return {
+        users,
+        user
+    }
+
+}
+
+const connectSearchTrip = connect(mapStateToProps)(SearchRouteScene)
+export default connectSearchTrip;

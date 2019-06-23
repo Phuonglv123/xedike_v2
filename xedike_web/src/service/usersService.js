@@ -11,6 +11,9 @@ export const userService = {
     update,
     delete: _delete
 };
+export type dsa ={
+
+};
 
 function login(username, password) {
 

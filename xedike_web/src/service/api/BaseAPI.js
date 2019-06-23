@@ -2,17 +2,18 @@ import axios from "axios";
 import {Modal} from 'antd';
 import config from "../../ultils/config/config";
 import AppUrl from '../../components/appRoute/AppUrl'
+import {connect} from "react-redux";
+import {authHeader} from "../../helpers/auth";
 
 
-export default class BaseAPI {
+export class BaseAPI {
     constructor() {
         this.apiUrl = config.API_URL;
-        const {detect} = require('detect-browser');
-        this.browser = detect();
     }
 
-    setToken(token) {
-        this.token = token;
+    setToken() {
+        const token = this.props.user.token;
+        return token;
     }
 
 
@@ -33,10 +34,7 @@ export default class BaseAPI {
         try {
             const res = await axios({
                 method: option.method,
-                headers: {
-                    'Content-type': 'application/json',
-                    'Authorization': `Token ${this.token}`,
-                },
+                headers: authHeader(),
                 url: `${this.apiUrl}${option.url}`,
                 data: option.params,
                 validateStatus: status => {
@@ -78,3 +76,20 @@ export type Option = {
     returnRaw: boolean,
     params: Object
 }
+
+
+function mapStateToProps(state) {
+    const {users, authentication} = state;
+    const {user} = authentication;
+    return {
+        users,
+        user
+    }
+
+}
+
+const connectAPI = connect(mapStateToProps)(BaseAPI);
+export default connectAPI;
+
+
+

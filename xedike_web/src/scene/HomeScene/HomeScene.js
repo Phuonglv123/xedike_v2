@@ -1,19 +1,18 @@
 import React, {Component} from 'react';
 import './HomeScene.css'
-import {Tabs, Icon, Radio, Row, Col, Input, Button, Card, Divider, DatePicker} from 'antd';
+import {Button, Col, Divider, Input, Row, Tabs, List, Icon} from 'antd';
 import axios from 'axios';
-import AppUrl from "../../components/appRoute/AppUrl";
+import BlockUI from "../../components/BlockUI/BlockUI";
 
-
-const RadioGroup = Radio.Group;
-const TabPane = Tabs.TabPane;
+const {TabPane} = Tabs;
 
 class HomeScene extends Component {
     constructor(props) {
         super(props);
         this.state = {
             data: [],
-            radioValue: ''
+            radioValue: '',
+            loading: false,
         }
     }
 
@@ -26,133 +25,169 @@ class HomeScene extends Component {
     };
 
     async componentDidMount() {
+        this.setState({
+            loading: true,
+        })
         let res = await axios({
             method: 'get',
-            url: 'http://localhost:4000/api/trip/allroute',
+            url: 'https://secret-falls-56885.herokuapp.com/api/trip/allroute',
             responseType: 'stream'
         });
         this.setState({
-            data: res.data
+            data: res.data,
+            loading: false,
         });
     }
 
-    renderRoute() {
-        return this.state.data.map((i, index) => {
-                return (
-                    <Col span={12} key={index}>
-                        <div>
-                            <span>{i.locationFrom} </span>
-                            <span>to</span>
-                            <span> {i.locationTo}</span>
-                        </div>
-                        <div className='book-route'>
-                            <div>
-                                <span>20-20-2019</span>
-                                <span>|</span>
-                                <span>230 VND</span>
-                            </div>
-                            <div>
-                                <Button type='primary' size='default'>Book now</Button>
-                            </div>
-                        </div>
-                        <Divider dashed/>
-                    </Col>
-                )
-            }
-        )
-    }
-
-    onChangeDate(date, dateString) {
-        console.log(date, dateString);
-    }
-
     render() {
+        const {data} = this.state;
         return (
-            <div className='component-home'>
-                <div>
-                    <div className='background-home'>
-
+            <BlockUI blocking={this.state.loading}>
+                <div className='component-home'>
+                    <div className="slider-body">
+                        <img src={require("./../../ultils/images/banner-nguoi-1920x450.png")} alt=""/>
                     </div>
-                    <div className='form-booking'>
-                        <div className='background-top-form'>
-                            <img src={require('../../ultils/images/bus.webp')} alt=""/>
-                        </div>
-                        <div className='tab-form-book'>
-                            <Tabs defaultActiveKey="1">
-                                <TabPane tab={<h3><Icon type="car"/> Car</h3>} key="1">
-                                    <div style={{margin: '20px'}}>
-                                        <h2>Search car</h2>
-                                        <RadioGroup onChange={this.onChange} value={this.state.radioValue}>
-                                            <Radio value='oneway'>One way</Radio>
-                                            <Radio value='roundtrip'>Round trip</Radio>
-                                        </RadioGroup>
-                                    </div>
-                                    <div>
-                                        <Row gutter={16}>
-                                            <Col span={6}>
-                                                <Input placeholder='From'/>
-                                            </Col>
-                                            <Col span={1}><Button shape="circle" icon="swap"/></Col>
-                                            <Col span={6}>
-                                                <Input placeholder='To'/>
-                                            </Col>
-                                            <Col span={4}>
-                                                <DatePicker style={{width: '100%'}}
-                                                            onChange={this.onChangeDate.bind(this)}/>
-                                            </Col>
-                                            <Col span={4}>
-                                                <DatePicker style={{width: '100%'}}
-                                                            onChange={this.onChangeDate.bind(this)}/>
-                                            </Col>
-                                            <Col span={3}>
-                                                <Button type='primary' icon='send' onClick={() => {
-                                                    this.props.history.push(AppUrl.searchRoute())
-                                                }}>Seacrh</Button>
-                                            </Col>
-                                        </Row>
-                                    </div>
+                    <div className="home-search-ticket-panel">
+                        <Row gutter={8}>
+                            <Col span={16}>
+                                <Row gutter={8}>
+                                    <Col span={11}>
+                                        <div>
+                                            <Input size="large" placeholder="large size"/>
+                                        </div>
+                                    </Col>
+                                    <Col span={2}>
+                                        <Button type="primary" icon="download" size={20} style={{
+                                            textAlign: "center",
+                                            paddingTop: "10px",
+                                            paddingBottom: "28px",
+                                            paddingRight: "40px"
+                                        }}/>
+                                    </Col>
+                                    <Col span={11}>
+                                        <div>
+                                            <Input size="large" placeholder="large size"/>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            </Col>
+                            <Col span={8}>
+                                <Row gutter={8}>
+                                    <Col span={12}>
+                                        <div>
+                                            <Input size="large" placeholder="large size"/>
+                                        </div>
+                                    </Col>
+                                    <Col span={12}>
+                                        <Button type="primary" block
+                                                style={{paddingTop: "10px", paddingBottom: "26px"}}>
+                                            Search route
+                                        </Button>
+                                    </Col>
+                                </Row>
+                            </Col>
+                        </Row>
+                    </div>
+                    <div className="home-list-route">
+                        <div className="card-list-route">
+                            <Tabs type="card">
+                                <TabPane tab="All Route" key="1">
+                                    <List
+                                        header={null}
+                                        footer={null}
 
+                                        dataSource={data}
+                                        renderItem={item => (
+                                            <Col span={12}>
+                                                <div className="list-route-item">
+                                                    <div className="name-location">
+                                                        <span>{item.locationFrom}</span>
+                                                        <Icon className="icon-location" type="arrow-right"/>
+                                                        <span>{item.locationTo}</span>
+                                                    </div>
+                                                    <div className="name-fee">
+                                                        <span className="fee-ticket">{item.fee}.000 VND/ticket</span>
+                                                        <Button style={{
+                                                            backgroundColor: "#f8c13c",
+                                                            color: "black",
+                                                            fontSize: "14px",
+                                                            fontWeight: "bold"
+                                                        }} icon="car" size={28}>
+                                                            Book Ticket
+                                                        </Button>
+                                                    </div>
+                                                </div>
+                                            </Col>
+                                        )}
+                                    />
                                 </TabPane>
-                                <TabPane tab={<h3><Icon type="home"/> Hotel </h3>} key="2">
-                                    Tab 2
+                                <TabPane tab="Hà Nội" key="2">
+                                    <p>Content of Tab Pane 2</p>
+                                    <p>Content of Tab Pane 2</p>
+                                    <p>Content of Tab Pane 2</p>
+                                </TabPane>
+                                <TabPane tab="Đà Nẵng" key="3">
+                                    <p>Content of Tab Pane 3</p>
+                                    <p>Content of Tab Pane 3</p>
+                                    <p>Content of Tab Pane 3</p>
+                                </TabPane>
+                                <TabPane tab="Sài Gòn" key="4">
+                                    <p>Content of Tab Pane 3</p>
+                                    <p>Content of Tab Pane 3</p>
+                                    <p>Content of Tab Pane 3</p>
+                                </TabPane>
+                                <TabPane tab="Đà Nẵng" key="5">
+                                    <p>Content of Tab Pane 3</p>
+                                    <p>Content of Tab Pane 3</p>
+                                    <p>Content of Tab Pane 3</p>
                                 </TabPane>
                             </Tabs>
                         </div>
                     </div>
+
+                    <div className="take-care">
+                        <div className="text-care">
+                            <span>Bring safe your trips! Wish you good luck!</span>
+                        </div>
+                        <div className="card-take-care">
+                            <div className="care-item">
+                                <Icon type="border-outer" className="icon"/>
+                                <div className="item">
+                                    <span>5.000+</span>
+                                    <span>My routes</span>
+                                </div>
+                            </div>
+                            <div className="care-item">
+                                <Icon type="car" className="icon"/>
+                                <div className="item">
+                                    <span>2.000+</span>
+                                    <span>My Driver</span>
+                                </div>
+                            </div>
+                            <div className="care-item">
+                                <Icon type="idcard" className="icon"/>
+                                <div className="item">
+                                    <span>5.000+</span>
+                                    <span>My Passenger</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="introduce-home">
+                        <div className="text-animation">
+                            <span className="animation-type">Share your route with everybody ! Happy </span>
+                        </div>
+                        <div className="card-intro">
+                            <div className="background-intro"/>
+                            <div className="bus-img">
+                                <img src={require("../../ultils/images/banh-xe.gif")} alt=""/>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div className='promotion-car'>
-                    <h2>Offer</h2>
-                    <Row gutter={32}>
-                        <Col span={6}>
-                            <div>
-                                <img src={require('../../ultils/images/offer1.webp')} alt=""/>
-                            </div>
-                        </Col>
-                        <Col span={6}>
-                            <div>
-                                <img src={require('../../ultils/images/offer2.webp')} alt=""/>
-                            </div>
-                        </Col>
-                        <Col span={6}>
-                            <div>
-                                <img src={require('../../ultils/images/offer3.webp')} alt=""/>
-                            </div>
-                        </Col>
-                        <Col span={6}>
-                            <div>
-                                <img src={require('../../ultils/images/offer4.webp')} alt=""/>
-                            </div>
-                        </Col>
-                    </Row>
-                </div>
-                <div style={{padding: '30px'}}>
-                    <Card title='Top route'>
-                        <Row gutter={16}>
-                            {this.renderRoute()}
-                        </Row>
-                    </Card>
-                </div>
-            </div>
+            </BlockUI>
         );
     }
 }

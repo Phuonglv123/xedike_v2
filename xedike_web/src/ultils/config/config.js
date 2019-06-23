@@ -1,15 +1,15 @@
 import {IS_STAGE} from "./env";
 
 class ConfigDEV {
-    API_URL = 'http://localhost:4000/api/';
+    API_URL = 'https://secret-falls-56885.herokuapp.com/api/';
 }
 
 class ConfigSTAG {
-    API_URL = 'http://localhost:4000/api/';
+    API_URL = 'https://secret-falls-56885.herokuapp.com/api/';
 }
 
 class ConfigPROD {
-    API_URL = 'http://localhost:4000/api/';
+    API_URL = 'https://secret-falls-56885.herokuapp.com/api/';
 }
 
 

@@ -1,15 +1,23 @@
-import {authHeader} from "../helpers/auth";
-export const tripsService = {
-    getAllRoute
-};
+import {BaseAPI} from "./api/BaseAPI";
 
-function getAllRoute() {
-    const requestOptions = {
-        method: 'GET',
-        headers: authHeader()
-    };
+class TripsService extends BaseAPI {
 
-    return fetch(`http://localhost:4000/api/trip/allroute`, requestOptions).then(
+    async getAllTrip() {
+        const res = await this.apiCall({
+            url: "trip/allroute",
+            method: "GET",
+        });
+        return res;
+    }
 
-    );
+    async bookTripId(id_passenger, params){
+        const res = await this.apiCall({
+            url: `trip/book/${id_passenger}`,
+            method: "POST",
+            params: params,
+        });
+        return res;
+    }
 }
+
+export default new TripsService();

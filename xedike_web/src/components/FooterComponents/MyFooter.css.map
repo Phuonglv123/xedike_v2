@@ -1,7 +1,1 @@
-{
-"version": 3,
-"mappings": "AAAA,UAAW;EACT,gBAAgB,EAAE,OAAO",
-"sources": ["MyFooter.scss"],
-"names": [],
-"file": "MyFooter.css"
-}
+{"version":3,"sourceRoot":"","sources":["MyFooter.scss"],"names":[],"mappings":"AAEE;EACE;EACA;;AAEA;EACE;;AACA;EACE;;AAMJ;EACE;EACA;EACA","file":"MyFooter.css"}

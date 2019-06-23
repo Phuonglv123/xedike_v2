@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
 import {Route, Router, Switch} from 'react-router-dom';
 
 import {history} from '../../helpers/history';
 import {alertActions} from '../../actions/alertActions';
 import {Layout} from 'antd';
-import {userActions} from "../../actions/userActions";
-import {userService} from "../../service/usersService";
 import AppUrl from "./AppUrl";
 import HomeScene from "../../scene/HomeScene/HomeScene";
 import SearchRouteScene from "../../scene/SearchRouteScene/SearchRouteScene";
@@ -34,19 +31,11 @@ class AppRoute extends Component {
         super(props);
 
         const {dispatch} = this.props;
-        history.listen(() => {
-            dispatch(alertActions.clear());
-        });
+        // history.listen(() => {
+        //     dispatch(alertActions.clear());
+        // });
     }
 
-    componentDidMount() {
-        this.props.dispatch(userActions.getAll());
-    }
-
-    onLogOut = () => {
-        userService.logout();
-        window.location.reload();
-    };
 
     render() {
         return (
@@ -70,14 +59,6 @@ class AppRoute extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    const {users, authentication} = state;
-    const {user} = authentication;
-    return {
-        user,
-        users
-    };
-}
 
-const connectedApp = connect(mapStateToProps)(AppRoute);
-export default connectedApp
+
+export default AppRoute

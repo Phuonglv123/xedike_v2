@@ -24,35 +24,35 @@ class MyFooter extends Component {
                         <Row gutter={32}>
                             <Col span={6}>
                                 <div className='footer-title'>
-                                    <h4>Help Center</h4>
+                                    <h4>About ShareCar</h4>
                                 </div>
                                 <div className='footer-text'>
-                                    <span>lorem ipsum dolor sit amet</span>
-                                    <span>lorem ipsum dolor sit amet</span>
-                                    <span>lorem ipsum dolor sit amet</span>
+                                    <span>Recruitment</span>
+                                    <span>News</span>
+                                    <span>Introduce ShareCar.com</span>
+                                    <span>Contact</span>
+                                </div>
+                            </Col>
+                            <Col span={6}>
+                                <div className='footer-title'>
+                                    <h4>Support</h4>
+                                </div>
+                                <div className='footer-text'>
+                                    <span>Payment guide</span>
+                                    <span>Rules of ShareCar.com</span>
+                                    <span>FAQs</span>
                                     <span>lorem ipsum dolor sit amet</span>
                                 </div>
                             </Col>
                             <Col span={6}>
                                 <div className='footer-title'>
-                                    <h4>Help Center</h4>
+                                    <h4>Media social</h4>
                                 </div>
                                 <div className='footer-text'>
-                                    <span>lorem ipsum dolor sit amet</span>
-                                    <span>lorem ipsum dolor sit amet</span>
-                                    <span>lorem ipsum dolor sit amet</span>
-                                    <span>lorem ipsum dolor sit amet</span>
-                                </div>
-                            </Col>
-                            <Col span={6}>
-                                <div className='footer-title'>
-                                    <h4>Help Center</h4>
-                                </div>
-                                <div className='footer-text'>
-                                    <span>lorem ipsum dolor sit amet</span>
-                                    <span>lorem ipsum dolor sit amet</span>
-                                    <span>lorem ipsum dolor sit amet</span>
-                                    <span>lorem ipsum dolor sit amet</span>
+                                    <span>Facebook</span>
+                                    <span>Youtube</span>
+                                    <span>Instagram</span>
+                                    <span>Google +</span>
                                 </div>
                             </Col>
                             <Col span={6}>
