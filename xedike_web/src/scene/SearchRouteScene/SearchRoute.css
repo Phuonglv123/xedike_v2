@@ -1,27 +1,36 @@
 .component-search .background-home {
   height: 180px;
   width: 100%;
-  background-color: #1890ff; }
+  background-color: #096dd9;
+}
 .component-search .form-booking {
-  height: 100px;
+  position: relative;
+  top: -25px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 8px;
   width: 90%;
-  background-color: white;
-  box-shadow: 0 2px 6px 0 rgba(138, 138, 138, 0.25);
-  margin: -50px auto; }
+  height: 100px;
+  background-color: #f8c13c;
+}
 .component-search .background-top-form img {
-  width: 100%; }
+  width: 100%;
+}
 .component-search .tab-form-book {
   margin-top: -50px;
-  padding-top: 35px; }
+  padding-top: 35px;
+}
 .component-search .list-route {
   margin-top: 8em;
   width: 90%;
   margin-left: auto;
-  margin-right: auto; }
-  .component-search .list-route .route-detail {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center; }
+  margin-right: auto;
+}
+.component-search .list-route .route-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
 
 /*# sourceMappingURL=SearchRoute.css.map */

@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import './HomeScene.css'
-import {Button, Col, Divider, Input, Row, Tabs, List, Icon} from 'antd';
+import {Button, Col, Divider, Input, Row, Tabs, List, Icon, DatePicker} from 'antd';
 import axios from 'axios';
 import BlockUI from "../../components/BlockUI/BlockUI";
+import AppUrl from "../../components/appRoute/AppUrl";
+import SearchComponent from "../../components/SearchComponent/SearchComponent";
 
 const {TabPane} = Tabs;
 
@@ -48,45 +50,7 @@ class HomeScene extends Component {
                         <img src={require("./../../ultils/images/banner-nguoi-1920x450.png")} alt=""/>
                     </div>
                     <div className="home-search-ticket-panel">
-                        <Row gutter={8}>
-                            <Col span={16}>
-                                <Row gutter={8}>
-                                    <Col span={11}>
-                                        <div>
-                                            <Input size="large" placeholder="large size"/>
-                                        </div>
-                                    </Col>
-                                    <Col span={2}>
-                                        <Button type="primary" icon="download" size={20} style={{
-                                            textAlign: "center",
-                                            paddingTop: "10px",
-                                            paddingBottom: "28px",
-                                            paddingRight: "40px"
-                                        }}/>
-                                    </Col>
-                                    <Col span={11}>
-                                        <div>
-                                            <Input size="large" placeholder="large size"/>
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </Col>
-                            <Col span={8}>
-                                <Row gutter={8}>
-                                    <Col span={12}>
-                                        <div>
-                                            <Input size="large" placeholder="large size"/>
-                                        </div>
-                                    </Col>
-                                    <Col span={12}>
-                                        <Button type="primary" block
-                                                style={{paddingTop: "10px", paddingBottom: "26px"}}>
-                                            Search route
-                                        </Button>
-                                    </Col>
-                                </Row>
-                            </Col>
-                        </Row>
+                       <SearchComponent/>
                     </div>
                     <div className="home-list-route">
                         <div className="card-list-route">

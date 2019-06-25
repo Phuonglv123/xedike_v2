@@ -46,7 +46,7 @@ class MyHeader extends Component {
                     <Menu.Item key="Home">Home</Menu.Item>
                     <Menu.Item key="Logout" onClick={this.onLogOut.bind(this)}>Log out</Menu.Item>
                 </Menu> : <Menu
-                    style={{background:"#096dd9",lineHeight: '64px'}}>
+                    style={{background:"#096dd9",lineHeight: '64px'}}
                     mode="horizontal"
                 >
                     <Menu.Item key="1">Home</Menu.Item>
