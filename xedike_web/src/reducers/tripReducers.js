@@ -3,9 +3,12 @@ import {tripConstants} from "../contants/tripContants";
 export function searchTrip(state = {}, action) {
     switch (action.type) {
         case tripConstants.SEARCH_REQUEST:
-            return { searching: true };
+            return {
+                searching: true,
+
+            };
         case tripConstants.SEARCH_SUCCESS:
-            return {};
+            return {resultSearch: action.res,};
         case tripConstants.SEARCH_FAILURE:
             return {};
         default:

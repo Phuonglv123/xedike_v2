@@ -5,6 +5,7 @@ import {connect} from "react-redux";
 import TripsService from "../../service/tripsService";
 import SearchComponent from "../../components/SearchComponent/SearchComponent";
 import ResultRouteScene from './ResultRouteScene';
+import {searchTrip} from "../../reducers/tripReducers";
 
 
 class SearchRouteScene extends Component {
@@ -41,6 +42,7 @@ class SearchRouteScene extends Component {
 
     render() {
         const {data} = this.state;
+        console.log(this.props.resultSearch);
         return (
             <div className='component-search'>
                 <div>
@@ -51,7 +53,7 @@ class SearchRouteScene extends Component {
                 </div>
 
                 <div className='list-route'>
-                    <ResultRouteScene/>
+
                 </div>
             </div>
         );
@@ -60,11 +62,13 @@ class SearchRouteScene extends Component {
 
 
 function mapStateToProps(state) {
-    const {users, authentication} = state;
+    const {users, authentication, searchTrip} = state;
     const {user} = authentication;
+    const {resultSearch} = searchTrip
     return {
         users,
-        user
+        user,
+        resultSearch
     }
 
 }
