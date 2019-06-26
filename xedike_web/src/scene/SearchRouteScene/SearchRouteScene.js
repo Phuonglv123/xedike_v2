@@ -4,6 +4,7 @@ import './SearchRoute.css';
 import {connect} from "react-redux";
 import TripsService from "../../service/tripsService";
 import SearchComponent from "../../components/SearchComponent/SearchComponent";
+import ResultRouteScene from './ResultRouteScene';
 
 
 class SearchRouteScene extends Component {
@@ -32,7 +33,6 @@ class SearchRouteScene extends Component {
             notes: "test",
         })
         debugger
-        console.log(res)
     }
 
     onChangeDate(date, dateString) {
@@ -41,7 +41,6 @@ class SearchRouteScene extends Component {
 
     render() {
         const {data} = this.state;
-        console.log(data)
         return (
             <div className='component-search'>
                 <div>
@@ -52,16 +51,7 @@ class SearchRouteScene extends Component {
                 </div>
 
                 <div className='list-route'>
-                    <Row>
-                        <List
-                            size="large"
-                            bordered
-                            dataSource={data}
-                            renderItem={i=><div>
-
-                            </div>}
-                        />
-                    </Row>
+                    <ResultRouteScene/>
                 </div>
             </div>
         );

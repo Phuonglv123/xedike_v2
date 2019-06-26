@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import {Button, Col, DatePicker, Form, Icon, Input, Row} from "antd";
-import AppUrl from "../appRoute/AppUrl";
-import TripsService from '../../service/tripsService';
-import {userActions} from "../../actions/userActions";
 import {tripActions} from "../../actions/tripActions";
 import {connect} from "react-redux";
+import {withRouter} from 'react-router-dom';
+import AppUrl from "../appRoute/AppUrl";
 
 class SearchComponent extends Component {
     constructor(props) {
@@ -27,7 +26,7 @@ class SearchComponent extends Component {
         const {dispatch} = this.props;
         if (locationFrom && locationTo) {
             dispatch(tripActions.searchRoutes(locationFrom, locationTo));
-            debugger
+            this.props.history.push(AppUrl.searchRoute());
         }
     };
 
@@ -85,4 +84,4 @@ function mapStateToProps(state) {
 }
 
 const connectSearch = connect(mapStateToProps)(SearchComponent);
-export default connectSearch;
+export default withRouter(connectSearch);
