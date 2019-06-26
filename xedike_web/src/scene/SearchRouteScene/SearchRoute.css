@@ -1,8 +1,7 @@
 .component-search .background-home {
   height: 180px;
   width: 100%;
-  background-color: #096dd9;
-}
+  background-color: #096dd9; }
 .component-search .form-booking {
   position: relative;
   top: -25px;
@@ -11,26 +10,21 @@
   border-radius: 8px;
   width: 90%;
   height: 100px;
-  background-color: #f8c13c;
-}
+  background-color: #f8c13c; }
 .component-search .background-top-form img {
-  width: 100%;
-}
+  width: 100%; }
 .component-search .tab-form-book {
   margin-top: -50px;
-  padding-top: 35px;
-}
+  padding-top: 35px; }
 .component-search .list-route {
   margin-top: 8em;
   width: 90%;
   margin-left: auto;
-  margin-right: auto;
-}
-.component-search .list-route .route-detail {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-}
+  margin-right: auto; }
+  .component-search .list-route .route-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center; }
 
 /*# sourceMappingURL=SearchRoute.css.map */

@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import {Button, Col, DatePicker, Form, Icon, Input, Row} from "antd";
 import AppUrl from "../appRoute/AppUrl";
+import TripsService from '../../service/tripsService';
+import {userActions} from "../../actions/userActions";
+import {tripActions} from "../../actions/tripActions";
+import {connect} from "react-redux";
 
 class SearchComponent extends Component {
     constructor(props) {
@@ -13,19 +17,29 @@ class SearchComponent extends Component {
 
     handleChange = e => {
         this.setState({
-            [e.target.id]: e.target.value
+            [e.target.name]: e.target.value
         })
+    };
+
+    handleSubmit = async (e) => {
+        e.preventDefault();
+        const {locationFrom, locationTo} = this.state;
+        const {dispatch} = this.props;
+        if (locationFrom && locationTo) {
+            dispatch(tripActions.searchRoutes(locationFrom, locationTo));
+            debugger
+        }
     };
 
     render() {
         return (
-            <Form>
+            <Form onSubmit={this.handleSubmit.bind(this)}>
                 <Row gutter={8}>
                     <Col span={16}>
                         <Row gutter={8}>
                             <Col span={11}>
                                 <div>
-                                    <Input size="large" placeholder="large size"
+                                    <Input size={"large"} placeholder="large size" name='locationFrom'
                                            onChange={this.handleChange.bind(this)}/>
                                 </div>
                             </Col>
@@ -36,7 +50,7 @@ class SearchComponent extends Component {
                             </Col>
                             <Col span={11}>
                                 <div>
-                                    <Input size="large" placeholder="large size"
+                                    <Input size={"large"} placeholder="large size" name='locationTo'
                                            onChange={this.handleChange.bind(this)}/>
                                 </div>
                             </Col>
@@ -63,4 +77,12 @@ class SearchComponent extends Component {
     }
 }
 
-export default SearchComponent;
+function mapStateToProps(state) {
+    const searching = state.searchTrip;
+    return {
+        searching
+    };
+}
+
+const connectSearch = connect(mapStateToProps)(SearchComponent);
+export default connectSearch;

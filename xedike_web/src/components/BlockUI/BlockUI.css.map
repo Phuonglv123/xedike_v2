@@ -1,1 +1,7 @@
-{"version":3,"sourceRoot":"","sources":["BlockUI.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA","file":"BlockUI.css"}
+{
+"version": 3,
+"mappings": "AAAA,aAAc;EACZ,UAAU,EAAE,MAAM;EAClB,UAAU,EAAE,mBAAmB;EAC/B,aAAa,EAAE,GAAG",
+"sources": ["BlockUI.scss"],
+"names": [],
+"file": "BlockUI.css"
+}

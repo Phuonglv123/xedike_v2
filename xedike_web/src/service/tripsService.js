@@ -10,11 +10,20 @@ class TripsService extends BaseAPI {
         return res;
     }
 
-    async bookTripId(id_passenger, params){
+    async bookTripId(id_passenger, params) {
         const res = await this.apiCall({
             url: `trip/book/${id_passenger}`,
             method: "POST",
             params: params,
+        });
+        return res;
+    }
+
+    async searchRoutes(params) {
+        const res = await this.apiCall({
+            url: 'trip/search',
+            method: 'POST',
+            params: params
         });
         return res;
     }

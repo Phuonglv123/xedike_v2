@@ -1,1 +1,7 @@
-{"version":3,"sourceRoot":"","sources":["myHeader.scss"],"names":[],"mappings":"AAEA;EACE;;;AAGF;EACE","file":"myHeader.css"}
+{
+"version": 3,
+"mappings": "AAEA,kBAAkB;EAChB,UAAU,EAAE,oBAAyB;;AAGvC,SAAS;EACP,UAAU,EAAE,oBAAyB",
+"sources": ["myHeader.scss"],
+"names": [],
+"file": "myHeader.css"
+}

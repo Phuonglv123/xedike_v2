@@ -1,1 +1,7 @@
-{"version":3,"sourceRoot":"","sources":["MyFooter.scss"],"names":[],"mappings":"AAEE;EACE;EACA;;AAEA;EACE;;AACA;EACE;;AAMJ;EACE;EACA;EACA","file":"MyFooter.css"}
+{
+"version": 3,
+"mappings": "AAEE,sBAAY;EACV,UAAU,EAAE,MAAM;EAClB,OAAO,EAAE,IAAI;EAEb,qCAAe;IACb,OAAO,EAAE,IAAI;IACb,4CAAO;MACL,WAAW,EAAE,IAAI;AAMrB,uCAAY;EACV,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,UAAU;EAC3B,WAAW,EAAE,MAAM",
+"sources": ["MyFooter.scss"],
+"names": [],
+"file": "MyFooter.css"
+}

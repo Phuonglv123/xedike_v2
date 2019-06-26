@@ -1,17 +1,13 @@
 .my-footer .footer-top {
   text-align: center;
-  padding: 20px;
-}
-.my-footer .footer-top .footer-social {
-  padding: 10px;
-}
-.my-footer .footer-top .footer-social button {
-  margin-left: 20px;
-}
+  padding: 20px; }
+  .my-footer .footer-top .footer-social {
+    padding: 10px; }
+    .my-footer .footer-top .footer-social button {
+      margin-left: 20px; }
 .my-footer .footer-content .footer-text {
   display: grid;
   justify-content: flex-start;
-  align-items: center;
-}
+  align-items: center; }
 
 /*# sourceMappingURL=MyFooter.css.map */
