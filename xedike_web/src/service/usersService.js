@@ -1,5 +1,6 @@
 import {authHeader} from '../helpers/auth';
 import config from "../ultils/config/config";
+
 let apiUrl = config.API_URL;
 export const userService = {
     login,
@@ -7,12 +8,7 @@ export const userService = {
     registerPassenger,
     registerDriver,
     getAll,
-    getById,
-    update,
-    delete: _delete
-};
-export type dsa ={
-
+    getInfoDriver,
 };
 
 function login(username, password) {
@@ -31,6 +27,16 @@ function login(username, password) {
 
             return user;
         });
+}
+
+function getInfoDriver(id) {
+    return fetch(`${apiUrl}driver/detail/${id}`)
+        .then(res => {
+            return res;
+        })
+        .catch(err => {
+            return err;
+        })
 }
 
 function logout() {
