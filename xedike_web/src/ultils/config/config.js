@@ -1,3 +1,4 @@
+import {IS_STAGE} from './env';
 
 class ConfigDEV {
     API_URL = 'http://localhost:5000/api/';
