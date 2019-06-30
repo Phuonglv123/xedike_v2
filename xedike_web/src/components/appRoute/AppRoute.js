@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Route, Router, Switch} from 'react-router-dom';
 
 import {history} from '../../helpers/history';
-import {alertActions} from '../../actions/alertActions';
 import {Layout} from 'antd';
 import AppUrl from "./AppUrl";
 import HomeScene from "../../scene/HomeScene/HomeScene";

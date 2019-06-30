@@ -3,6 +3,9 @@ $second-color: #f8c13c;
 
 
 .component-search{
+  .icon{
+    font-size: 18px;
+  }
   .background-home {
     height: 180px;
     width: 100%;
@@ -34,17 +37,66 @@ $second-color: #f8c13c;
   }
 
   .list-route {
-    margin-top: 8em;
+    margin-top: 2em;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    border-top: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    .routeCard{
+      width: 100%;
+      border-bottom: 1px solid #cccccc;
+      .insideRouteCard{
+        padding: 30px;
+        .locationRoute{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          span{
+            font-size: 18px;
+            font-weight: bold;
+          }
+        }
+        .timeRoute{
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin-top: 30px;
+          span{
+            margin-left: 8px;
+            font-size: 18px;
+          }
+        }
 
-    .route-detail {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      text-align: center;
+        .infoRoute{
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          span{
+            font-size: 18px;
+          }
+        }
+        .availableUser{
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          margin-top: 30px;
+        }
+
+        .feeRoute{
+          span{
+            font-size: 15px;
+            font-weight: bold;
+          }
+        }
+        .buttonRoute{
+          margin-top: 30px;
+        }
+      }
     }
   }
 }
+
+
 
