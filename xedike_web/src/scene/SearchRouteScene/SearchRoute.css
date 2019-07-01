@@ -1,11 +1,9 @@
 .component-search .icon {
-  font-size: 18px;
-}
+  font-size: 18px; }
 .component-search .background-home {
   height: 180px;
   width: 100%;
-  background-color: #096dd9;
-}
+  background-color: #096dd9; }
 .component-search .form-booking {
   position: relative;
   top: -25px;
@@ -14,15 +12,12 @@
   border-radius: 8px;
   width: 90%;
   height: 100px;
-  background-color: #f8c13c;
-}
+  background-color: #f8c13c; }
 .component-search .background-top-form img {
-  width: 100%;
-}
+  width: 100%; }
 .component-search .tab-form-book {
   margin-top: -50px;
-  padding-top: 35px;
-}
+  padding-top: 35px; }
 .component-search .list-route {
   margin-top: 2em;
   width: 90%;
@@ -30,54 +25,42 @@
   margin-right: auto;
   border-top: 1px solid #cccccc;
   border-left: 1px solid #cccccc;
-  border-right: 1px solid #cccccc;
-}
-.component-search .list-route .routeCard {
-  width: 100%;
-  border-bottom: 1px solid #cccccc;
-}
-.component-search .list-route .routeCard .insideRouteCard {
-  padding: 30px;
-}
-.component-search .list-route .routeCard .insideRouteCard .locationRoute {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.component-search .list-route .routeCard .insideRouteCard .locationRoute span {
-  font-size: 18px;
-  font-weight: bold;
-}
-.component-search .list-route .routeCard .insideRouteCard .timeRoute {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 30px;
-}
-.component-search .list-route .routeCard .insideRouteCard .timeRoute span {
-  margin-left: 8px;
-  font-size: 18px;
-}
-.component-search .list-route .routeCard .insideRouteCard .infoRoute {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.component-search .list-route .routeCard .insideRouteCard .infoRoute span {
-  font-size: 18px;
-}
-.component-search .list-route .routeCard .insideRouteCard .availableUser {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 30px;
-}
-.component-search .list-route .routeCard .insideRouteCard .feeRoute span {
-  font-size: 15px;
-  font-weight: bold;
-}
-.component-search .list-route .routeCard .insideRouteCard .buttonRoute {
-  margin-top: 30px;
-}
+  border-right: 1px solid #cccccc; }
+  .component-search .list-route .routeCard {
+    width: 100%;
+    border-bottom: 1px solid #cccccc; }
+    .component-search .list-route .routeCard .insideRouteCard {
+      padding: 30px; }
+      .component-search .list-route .routeCard .insideRouteCard .locationRoute {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        .component-search .list-route .routeCard .insideRouteCard .locationRoute span {
+          font-size: 18px;
+          font-weight: bold; }
+      .component-search .list-route .routeCard .insideRouteCard .timeRoute {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 30px; }
+        .component-search .list-route .routeCard .insideRouteCard .timeRoute span {
+          margin-left: 8px;
+          font-size: 18px; }
+      .component-search .list-route .routeCard .insideRouteCard .infoRoute {
+        display: flex;
+        justify-content: space-around;
+        align-items: center; }
+        .component-search .list-route .routeCard .insideRouteCard .infoRoute span {
+          font-size: 18px; }
+      .component-search .list-route .routeCard .insideRouteCard .availableUser {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 30px; }
+      .component-search .list-route .routeCard .insideRouteCard .feeRoute span {
+        font-size: 15px;
+        font-weight: bold; }
+      .component-search .list-route .routeCard .insideRouteCard .buttonRoute {
+        margin-top: 30px; }
 
 /*# sourceMappingURL=SearchRoute.css.map */

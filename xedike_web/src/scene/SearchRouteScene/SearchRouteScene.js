@@ -24,18 +24,6 @@ class SearchRouteScene extends Component {
         });
     };
 
-    getBookTrip = async (i) => {
-        const id_passenger = this.props.user.payload.id;
-        let res = await TripsService.bookTripId(i, {
-            accountID: id_passenger,
-            locationGetIn: `${i.locationFrom}`,
-            locationGetOff: `${i.locationTo}`,
-            paymentMethod: "cash",
-            notes: "test",
-        });
-        console.log(res)
-    }
-
     onChangeDate(date, dateString) {
         console.log(date, dateString);
     }
