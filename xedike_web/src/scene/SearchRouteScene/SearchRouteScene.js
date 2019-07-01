@@ -12,8 +12,17 @@ class SearchRouteScene extends Component {
         super(props);
         this.state = {
             data: [],
-            selectC: false,
+            showItem: {}
         }
+    }
+
+    showContent(id) {
+        this.setState({
+            showItem: {
+                ...this.state.showItem,
+                [id]: true
+            }
+        });
     }
 
 
@@ -26,6 +35,14 @@ class SearchRouteScene extends Component {
 
     onChangeDate(date, dateString) {
         console.log(date, dateString);
+    }
+
+    dropDownItem(item) {
+        this.setState({
+            showItem: true,
+            id_trip: item
+
+        })
     }
 
     render() {
@@ -50,7 +67,7 @@ class SearchRouteScene extends Component {
                             pageSize: 3,
                         }}
                         dataSource={this.props.resultSearch ? this.props.resultSearch : data}
-                        renderItem={item => (
+                        renderItem={(item, index) => (
                             <div className='routeCard'>
                                 <div className='insideRouteCard'>
                                     <Row gutter={16}>
@@ -110,15 +127,14 @@ class SearchRouteScene extends Component {
                                                 </div>
                                                 <div className='buttonRoute'>
                                                     <Button type="primary" icon="car"
-                                                            onClick={() => this.setState({
-                                                                selectC: !this.state.selectC
-                                                            })}>View Route</Button>
+                                                            onClick={() => this.showContent(item._id)}>View
+                                                        Route</Button>
                                                 </div>
                                             </div>
                                         </Col>
                                     </Row>
+                                    {this.state.showItem[item._id] && <ItemsBooking data={item._id}/>}
                                 </div>
-                                {this.state.selectC ? <ItemsBooking/> : null}
                             </div>
                         )}
                     />

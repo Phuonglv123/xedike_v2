@@ -28,7 +28,8 @@ class ItemsBooking extends Component {
     getBookTrip = async (e) => {
         e.preventDefault();
         const id_passenger = this.props.user.payload.id;
-        let res = await TripsService.bookTripId(id_passenger, {
+        const id_trip = this.props.data;
+        let res = await TripsService.bookTripId(id_trip, {
             accountID: id_passenger,
             locationGetIn: this.state.locationGetIn,
             locationGetOff: this.state.locationGetOff,
@@ -118,11 +119,13 @@ class ItemsBooking extends Component {
 }
 
 function mapStateToProps(state) {
-    const {users, authentication} = state;
+    const {users, authentication, searchTrip} = state;
     const {user} = authentication;
+    const {resultSearch} = searchTrip;
     return {
         users,
         user,
+        resultSearch,
     }
 
 }
