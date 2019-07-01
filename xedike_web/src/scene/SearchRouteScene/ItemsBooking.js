@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {Row, Col, Card, Form, Input, Select} from "antd";
+import {Row, Col, Card, Form, Input, Select, Button} from "antd";
 import './ItemsBooking.css';
 import {connect} from "react-redux";
 import TripsService from "../../service/tripsService";
+import {userActions} from "../../actions/userActions";
 
 const {Option} = Select;
 
@@ -24,26 +25,26 @@ class ItemsBooking extends Component {
     }
 
 
-    getBookTrip = async (i) => {
+    getBookTrip = async (e) => {
+        e.preventDefault();
         const id_passenger = this.props.user.payload.id;
-        let res = await TripsService.bookTripId(i, {
+        let res = await TripsService.bookTripId(id_passenger, {
             accountID: id_passenger,
-            locationGetIn: `${i.locationFrom}`,
-            locationGetOff: `${i.locationTo}`,
-            paymentMethod: "cash",
-            notes: "test",
+            locationGetIn: this.state.locationGetIn,
+            locationGetOff: this.state.locationGetOff,
+            paymentMethod: this.state.paymentMethod,
+            notes: this.state.notes,
         });
         console.log(res)
-    }
+    };
 
     render() {
         const {getFieldDecorator} = this.props.form;
         const user = this.props.user;
-        console.log(user)
         return (
             <div className='bck-itemBooking'>
                 <div>
-                    <Form>
+                    <Form onSubmit={this.getBookTrip}>
                         <Row>
                             <Col span={8}>
                                 <Card title="Information Driver" style={{width: '100%'}}>
@@ -55,28 +56,31 @@ class ItemsBooking extends Component {
                             <Col span={8}>
                                 <Card title="Select From/To" style={{width: '100%'}}>
                                     <Form.Item label="Location Form">
-                                        {getFieldDecorator('note', {
+                                        {getFieldDecorator('Location Form', {
                                             rules: [{
                                                 required: true,
                                                 message: 'Please input your location Form to driver take you!'
                                             }],
-                                        })(<Input value={this.state.locationGetIn}
+                                        })(<Input value={this.state.locationGetIn} name='locationGetIn'
                                                   onChange={this.handleChange.bind(this)}/>)}
                                     </Form.Item>
                                     <Form.Item label="Location To">
-                                        {getFieldDecorator('gender', {
+                                        {getFieldDecorator('Location To', {
                                             rules: [{required: true, message: 'Please select your location to!'}],
-                                        })(<Input onChange={this.handleChange.bind(this)} value={this.state.locationGetOff}/>)}
+                                        })(<Input onChange={this.handleChange.bind(this)} name='locationGetOff'
+                                                  value={this.state.locationGetOff}/>)}
                                     </Form.Item>
-                                    <Form.Item label="Gender">
+                                    <Form.Item label="Payment method">
                                         {getFieldDecorator('gender', {
                                             rules: [{required: true, message: 'Please select your gender!'}],
                                         })(
                                             <Select
                                                 placeholder="Select a option and change input text above"
-                                                onChange={this.handleSelectChange}
+                                                onChange={(e) => {
+                                                    this.setState({paymentMethod: e})
+                                                }}
                                             >
-                                                <Option value="cash">Cash</Option>
+                                                <Option value='cash'>Cash</Option>
                                                 <Option value="internetBanking">Internet Banking</Option>
                                             </Select>,
                                         )}
@@ -95,10 +99,16 @@ class ItemsBooking extends Component {
                                         <Input placeholder='Enter Email'/>
                                     </Form.Item>
                                     <Form.Item label='Note: '>
-                                        <Input placeholder='Enter Note'/>
+                                        <Input placeholder='Enter Note' value={this.state.notes} name='notes'
+                                               onChange={this.handleChange.bind(this)}/>
                                     </Form.Item>
                                 </Card>
                             </Col>
+                        </Row>
+                        <Row>
+                            <Button htmlType='submit' type='primary'>
+                                Booking
+                            </Button>
                         </Row>
                     </Form>
                 </div>
