@@ -1,24 +1,41 @@
 import React, {Component} from 'react';
-import {Button, Col, DatePicker, Form, Icon, Input, Row} from "antd";
+import {Button, Col, DatePicker, Form, Icon, Input, Row, Select, Spin} from "antd";
 import {tripActions} from "../../actions/tripActions";
 import {connect} from "react-redux";
 import {withRouter} from 'react-router-dom';
 import AppUrl from "../appRoute/AppUrl";
+import dataProvince from './dataProvince';
+
+const {Option} = Select;
 
 class SearchComponent extends Component {
     constructor(props) {
         super(props);
+        this.lastFetchId = 0;
         this.state = {
-            locationFrom: '',
-            locationTo: '',
+            locationFrom: null,
+            locationTo: null,
         }
     }
 
-    handleChange = e => {
+    handleChangeFrom = e => {
         this.setState({
-            [e.target.name]: e.target.value
+            locationFrom: e
         })
     };
+
+    handleChangeTo = e => {
+        this.setState({
+            locationTo: e
+        })
+    };
+
+    handleChangeFormTo = () => {
+        this.setState({
+            locationFrom: this.state.locationTo,
+            locationTo: this.state.locationFrom
+        })
+    }
 
     handleSubmit = async (e) => {
         e.preventDefault();
@@ -38,19 +55,51 @@ class SearchComponent extends Component {
                         <Row gutter={8}>
                             <Col span={11}>
                                 <div>
-                                    <Input size={"large"} placeholder="large size" name='locationFrom'
-                                           onChange={this.handleChange.bind(this)}/>
+                                    {/*<Input size={"large"} placeholder="large size" name='locationFrom'*/}
+                                    {/*       onChange={this.handleChange.bind(this)}/>*/}
+                                    <Select
+                                        suffixIcon={<Icon type="environment"/>}
+                                        size={"large"}
+                                        showSearch
+                                        style={{width: '100%'}}
+                                        value={this.state.locationFrom ? this.state.locationFrom :
+                                            <span style={{color: '#ccc'}}>From</span>}
+                                        optionFilterProp="children"
+                                        onChange={this.handleChangeFrom.bind(this)}
+                                        filterOption={(input, option) =>
+                                            option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                        }
+                                    >
+                                        {dataProvince.map(i => <Option key={i.value}
+                                                                       value={i.label}>{i.label}</Option>)}
+                                    </Select>
                                 </div>
                             </Col>
                             <Col span={2}>
-                                <Button type="primary" style={{width: "100%", height: 40}}>
+                                <Button onClick={this.handleChangeFormTo.bind(this)} type="primary"
+                                        style={{width: "100%", height: 40}}>
                                     <Icon type="swap"/>
                                 </Button>
                             </Col>
                             <Col span={11}>
                                 <div>
-                                    <Input size={"large"} placeholder="large size" name='locationTo'
-                                           onChange={this.handleChange.bind(this)}/>
+                                    <Select
+                                        suffixIcon={<Icon type="environment"/>}
+                                        size={"large"}
+                                        showSearch
+                                        style={{width: '100%'}}
+                                        value={this.state.locationTo ? this.state.locationTo :
+                                            <span style={{color: '#ccc'}}>To</span>}
+                                        placeholder="To"
+                                        optionFilterProp="children"
+                                        onChange={this.handleChangeTo.bind(this)}
+                                        filterOption={(input, option) =>
+                                            option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                        }
+                                    >
+                                        {dataProvince.map(i => <Option key={i.value}
+                                                                       value={i.label}>{i.label}</Option>)}
+                                    </Select>
                                 </div>
                             </Col>
                         </Row>
@@ -59,7 +108,7 @@ class SearchComponent extends Component {
                         <Row gutter={8}>
                             <Col span={12}>
                                 <div>
-                                    <DatePicker size={"large"}/>
+                                    <DatePicker size={"large"} style={{width: '100%'}}/>
                                 </div>
                             </Col>
                             <Col span={12}>

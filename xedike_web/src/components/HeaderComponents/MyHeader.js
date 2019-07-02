@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import AppUrl from "../appRoute/AppUrl";
-import {Menu, Layout, Dropdown, Avatar} from "antd";
+import {Menu, Layout, Dropdown, Avatar, Icon} from "antd";
 import LoginComponents from "../LoginComponents/LoginComponents";
 import RegisterComponents from "../RegisterComponents/RegisterComponents";
 import {connect} from "react-redux";
@@ -32,53 +32,64 @@ class MyHeader extends Component {
     };
 
     render() {
-        const user = this.props.user;
+        const user = this.props.user.user;
         console.log(user)
         return (
-            <Header style={{background: "#096dd9"}}>
-                <Link to={AppUrl.home()}>
-                    <div className="logo">
-                        <h2>Share Car</h2>
-                    </div>
-                </Link>
-                {this.props.user ? <Menu
-                    style={{background: "#096dd9", lineHeight: '64px'}}
-                    mode="horizontal"
-                >
-                    <Menu.Item key="Home">Home</Menu.Item>
-                    <Menu.Item key="my_route">My Route</Menu.Item>
-                    <Menu.Item key="faqs">FAQs</Menu.Item>
-                    <Menu.Item key="Logout" onClick={this.onLogOut.bind(this)}>
-                        <Dropdown overlay={<Menu>
-                            <Menu.Item key="0">
-                                <div>
-                                    <h3>{user.firstname + '' + user.lastname}</h3>
-                                </div>
-                            </Menu.Item>
-                            <Menu.Item key="1">
-                                <span>dasdasdasdas</span>
-                            </Menu.Item>
-                            <Menu.Divider/>
-                            <Menu.Item key="3" onClick={this.onLogOut.bind(this)}>Log out</Menu.Item>
-                        </Menu>} trigger={['click']}>
-                            <a className="ant-dropdown-link" href="/">
-                                <Avatar size="large" icon="user"/>
-                            </a>
-                        </Dropdown>
-                    </Menu.Item>
-                </Menu> : <Menu
-                    style={{background: "#096dd9", lineHeight: '64px'}}
-                    mode="horizontal"
-                >
-                    <Menu.Item key="1">Home</Menu.Item>
-                    <Menu.Item key="list_route">List Route</Menu.Item>
-                    <Menu.Item key="2" onClick={() => {
-                        this.setState({signIn: !this.state.signIn})
-                    }}>sign in</Menu.Item>
-                    <Menu.Item key="3" onClick={() => {
-                        this.setState({signUp: !this.state.signUp})
-                    }}>sign up</Menu.Item>
-                </Menu>}
+            <Header style={{background: "rgb(24, 144, 255)"}}>
+                <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    width: '70%',
+                    marginRight: 'auto',
+                    marginLeft: 'auto'
+                }}>
+                    <Link to={AppUrl.home()}>
+                        <div className="logo">
+                            <h1>Share Car</h1>
+                        </div>
+                    </Link>
+                    {this.props.user ? <Menu
+                        style={{background: "rgb(24, 144, 255)", lineHeight: '64px'}}
+                        mode="horizontal"
+                    >
+                        <Menu.Item key="Home">Home</Menu.Item>
+                        <Menu.Item key="my_route">My Route</Menu.Item>
+                        <Menu.Item key="faqs">FAQs</Menu.Item>
+                        <Menu.Item key="Logout">
+                            <Dropdown overlay={<Menu>
+                                <Menu.Item key="0">
+                                    <div>
+                                        <h3>{user.firstname + ' ' + user.lastname}</h3>
+                                    </div>
+                                </Menu.Item>
+                                <Menu.Item key="1">
+                                    <Icon type='user'/>
+                                    <span>My profile</span>
+                                </Menu.Item>
+                                <Menu.Divider/>
+                                <Menu.Item key="3" onClick={this.onLogOut.bind(this)}>Log out</Menu.Item>
+                            </Menu>} trigger={['click']}>
+                                <a className="ant-dropdown-link" href="/">
+                                    <Avatar size="large" icon="user"/>
+                                </a>
+                            </Dropdown>
+                        </Menu.Item>
+                    </Menu> : <Menu
+                        style={{background: "rgb(24, 144, 255)", lineHeight: '64px'}}
+                        mode="horizontal"
+                    >
+                        <Menu.Item key="1">Home</Menu.Item>
+                        <Menu.Item key="list_route">List Route</Menu.Item>
+                        <Menu.Item key="2" onClick={() => {
+                            this.setState({signIn: !this.state.signIn})
+                        }}>sign in</Menu.Item>
+                        <Menu.Item key="3" onClick={() => {
+                            this.setState({signUp: !this.state.signUp})
+                        }}>sign up</Menu.Item>
+                    </Menu>}
+                </div>
+
                 {this.state.signIn ? <LoginComponents onClose={() => {
                     this.setState({signIn: !this.state.signIn})
                 }}/> : null}

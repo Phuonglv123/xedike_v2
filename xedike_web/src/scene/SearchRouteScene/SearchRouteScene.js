@@ -47,6 +47,7 @@ class SearchRouteScene extends Component {
 
     render() {
         const {data} = this.state;
+        console.log(data)
         return (
             <div className='component-search'>
                 <div>
@@ -64,7 +65,7 @@ class SearchRouteScene extends Component {
                             onChange: page => {
                                 console.log(page);
                             },
-                            pageSize: 3,
+                            pageSize: 20,
                         }}
                         dataSource={this.props.resultSearch ? this.props.resultSearch : data}
                         renderItem={(item, index) => (
