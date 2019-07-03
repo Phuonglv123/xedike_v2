@@ -32,7 +32,7 @@ class MyHeader extends Component {
     };
 
     render() {
-        const user = this.props.user.user;
+        const user = this.props.user;
         return (
             <Header style={{background: "rgb(24, 144, 255)"}}>
                 <div style={{
@@ -53,13 +53,13 @@ class MyHeader extends Component {
                         mode="horizontal"
                     >
                         <Menu.Item key="Home">Home</Menu.Item>
-                        {user.accountType === 'passenger' ? <Menu.Item key="my_route">My Route</Menu.Item> :
+                        {user.user.accountType === 'passenger' ? <Menu.Item key="my_route">My Route</Menu.Item> :
                             <Menu.Item key="registerTrip">Trip register</Menu.Item>}
                         <Menu.Item key="Logout">
                             <Dropdown overlay={<Menu>
                                 <Menu.Item key="0">
                                     <div>
-                                        <h3>{user.firstname + ' ' + user.lastname}</h3>
+                                        <h3>{user.user.firstname + ' ' + user.user.lastname}</h3>
                                     </div>
                                 </Menu.Item>
                                 <Menu.Item key="1">
