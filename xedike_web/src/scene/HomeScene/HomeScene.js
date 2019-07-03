@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './HomeScene.css'
 import {Button, Col, Icon, List, Tabs} from 'antd';
-import axios from 'axios';
 import BlockUI from "../../components/BlockUI/BlockUI";
 import SearchComponent from "../../components/SearchComponent/SearchComponent";
 import tripsService from "../../service/tripsService";
@@ -61,7 +60,7 @@ class HomeScene extends Component {
                                 color: "black",
                                 fontSize: "14px",
                                 fontWeight: "bold"
-                            }} icon="car" size={28}>
+                            }} icon="car" size={"large"}>
                                 Book Ticket
                             </Button>
                         </div>

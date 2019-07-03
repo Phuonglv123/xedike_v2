@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import {Row, Col, Card, Form, Input, Select, Button} from "antd";
+import {Button, Card, Col, Form, Input, Row, Select} from "antd";
 import './ItemsBooking.css';
 import {connect} from "react-redux";
 import TripsService from "../../service/tripsService";
-import {userActions} from "../../actions/userActions";
 
 const {Option} = Select;
 

@@ -26,16 +26,6 @@ export const routes = [
 ];
 
 class AppRoute extends Component {
-    constructor(props) {
-        super(props);
-
-        const {dispatch} = this.props;
-        // history.listen(() => {
-        //     dispatch(alertActions.clear());
-        // });
-    }
-
-
     render() {
         return (
             <Router history={history}>
@@ -57,7 +47,6 @@ class AppRoute extends Component {
         );
     }
 }
-
 
 
 export default AppRoute

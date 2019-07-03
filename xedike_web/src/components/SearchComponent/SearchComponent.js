@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Col, DatePicker, Form, Icon, Input, Row, Select, Spin} from "antd";
+import {Button, Col, DatePicker, Form, Icon, Row, Select} from "antd";
 import {tripActions} from "../../actions/tripActions";
 import {connect} from "react-redux";
 import {withRouter} from 'react-router-dom';
@@ -62,15 +62,16 @@ class SearchComponent extends Component {
                                         size={"large"}
                                         showSearch
                                         style={{width: '100%'}}
-                                        value={this.state.locationFrom ? this.state.locationFrom :
-                                            <span style={{color: '#ccc'}}>From</span>}
+                                        // value={this.state.locationFrom ? this.state.locationFrom :
+                                        //     <span style={{color: '#ccc'}}>From</span>}
+                                        placeholder='From'
                                         optionFilterProp="children"
                                         onChange={this.handleChangeFrom.bind(this)}
                                         filterOption={(input, option) =>
                                             option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                                         }
                                     >
-                                        {dataProvince.map(i => <Option key={i.value}
+                                        {dataProvince.map(i => <Option key={i.key}
                                                                        value={i.label}>{i.label}</Option>)}
                                     </Select>
                                 </div>
@@ -88,8 +89,8 @@ class SearchComponent extends Component {
                                         size={"large"}
                                         showSearch
                                         style={{width: '100%'}}
-                                        value={this.state.locationTo ? this.state.locationTo :
-                                            <span style={{color: '#ccc'}}>To</span>}
+                                        // value={this.state.locationTo ? this.state.locationTo :
+                                        //     <span style={{color: '#ccc'}}>To</span>}
                                         placeholder="To"
                                         optionFilterProp="children"
                                         onChange={this.handleChangeTo.bind(this)}
@@ -97,7 +98,7 @@ class SearchComponent extends Component {
                                             option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                                         }
                                     >
-                                        {dataProvince.map(i => <Option key={i.value}
+                                        {dataProvince.map(i => <Option key={i.key}
                                                                        value={i.label}>{i.label}</Option>)}
                                     </Select>
                                 </div>
