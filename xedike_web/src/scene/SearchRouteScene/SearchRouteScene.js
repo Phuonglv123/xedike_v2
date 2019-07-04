@@ -5,6 +5,7 @@ import {connect} from "react-redux";
 import TripsService from "../../service/tripsService";
 import SearchComponent from "../../components/SearchComponent/SearchComponent";
 import ItemsBooking from "./ItemsBooking";
+import usersService from "../../service/usersService";
 
 
 class SearchRouteScene extends Component {
@@ -33,8 +34,8 @@ class SearchRouteScene extends Component {
         });
     };
 
-    onChangeDate(date, dateString) {
-        console.log(date, dateString);
+    getInfoDriver = async (idDriver) => {
+        let res = await usersService.getDetailsDriver({idDriver})
     }
 
     dropDownItem(item) {

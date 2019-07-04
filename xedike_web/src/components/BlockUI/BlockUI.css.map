@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,aAAc;EACZ,UAAU,EAAE,MAAM;EAClB,UAAU,EAAE,mBAAmB;EAC/B,aAAa,EAAE,GAAG",
+"mappings": "AAAA,aAAc;EACZ,UAAU,EAAE,MAAM;EAClB,aAAa,EAAE,GAAG",
 "sources": ["BlockUI.scss"],
 "names": [],
 "file": "BlockUI.css"

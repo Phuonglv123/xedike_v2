@@ -1,93 +1,40 @@
-import {authHeader} from '../helpers/auth';
-import config from "../ultils/config/config";
+import {BaseAPI} from "./api/BaseAPI";
 
-let apiUrl = config.API_URL;
-export const userService = {
-    login,
-    logout,
-    registerPassenger,
-    registerDriver,
-    getAll,
-    getInfoDriver,
-};
-
-function login(username, password) {
-
-    const requestOptions = {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({username, password})
-    };
-
-    return fetch(`${apiUrl}home/login`, requestOptions)
-        .then(handleResponse)
-        .then(user => {
-            // store user details and jwt token in local storage to keep user logged in between page refreshes
-            localStorage.setItem('user', JSON.stringify(user));
-
-            return user;
+class usersService extends BaseAPI {
+    async registerPassenger(params) {
+        const res = await this.apiCall({
+            url: 'passenger/register',
+            method: 'POST',
+            params: params
         });
+        return res;
+    }
+
+    async registerDriver(params) {
+        const res = await this.apiCall({
+            url: 'driver/register',
+            method: "POST",
+            params: params
+        });
+        return res;
+    }
+
+    async getDetailsDriver(id) {
+        const res = await this.apiCall({
+            url: `driver/detail/${id}`,
+            method: "GET",
+        });
+        return res;
+    }
+
+    async createInfoDriver(params) {
+        const res = await this.apiCall({
+            url: 'driver/detail',
+            method: 'POST',
+            params: params
+        });
+        return res;
+    }
 }
 
-function getInfoDriver(id) {
-    return fetch(`${apiUrl}driver/detail/${id}`)
-        .then(res => {
-            return res;
-        })
-        .catch(err => {
-            return err;
-        })
-}
-
-function logout() {
-    // remove user from local storage to log user out
-    localStorage.removeItem('user');
-
-}
-
-function getAll() {
-    const requestOptions = {
-        method: 'GET',
-        headers: authHeader()
-    };
-
-    return fetch(`/users`, requestOptions).then(handleResponse);
-}
-
-function registerPassenger(user) {
-    const requestOptions = {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(user)
-    };
-
-    return fetch(`${apiUrl}passenger/register`, requestOptions).then(handleResponse);
-}
-
-function registerDriver(user) {
-    const requestOptions = {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(user)
-    };
-
-    return fetch(`${apiUrl}driver/register`, requestOptions).then(handleResponse);
-}
-
-function handleResponse(response) {
-    return response.text().then(text => {
-        const data = text && JSON.parse(text);
-        if (!response.ok) {
-            if (response.status === 401) {
-                // auto logout if 401 response returned from api
-                logout();
-                window.location.reload();
-            }
-
-            const error = (data && data.message) || response.statusText;
-            return Promise.reject(error);
-        }
-
-        return data;
-    });
-}
+export default new usersService();

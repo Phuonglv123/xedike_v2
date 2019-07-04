@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import AppUrl from "../appRoute/AppUrl";
-import {Menu, Layout, Dropdown, Avatar, Icon} from "antd";
+import {Avatar, Dropdown, Icon, Layout, Menu} from "antd";
 import LoginComponents from "../LoginComponents/LoginComponents";
 import RegisterComponents from "../RegisterComponents/RegisterComponents";
 import {connect} from "react-redux";
-import {userService} from "../../service/usersService";
-import {userActions} from "../../actions/userActions";
 import "./myHeader.css";
+import Auth from "../../service/api/Auth";
 
 const {Header} = Layout;
 
@@ -21,13 +20,9 @@ class MyHeader extends Component {
         }
     }
 
-    componentDidMount() {
-        this.props.dispatch(userActions.getAll());
-    }
-
 
     onLogOut = () => {
-        userService.logout();
+        Auth.logOut();
         window.location.reload();
     };
 

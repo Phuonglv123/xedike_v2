@@ -27,6 +27,32 @@ class TripsService extends BaseAPI {
         });
         return res;
     }
+
+    async createTrip(params) {
+        const res = await this.apiCall({
+            url: 'trip/create',
+            method: 'POST',
+            params: params
+        });
+        return res
+    }
+
+    async finishTrip(id) {
+        const res = await this.apiCall({
+            url: `finish/${id}`,
+            method: 'POST'
+        });
+        return res;
+    }
+
+    async rateTrip(id, params) {
+        const res = await this.apiCall({
+            url: `rate/${id}`,
+            method: 'POST',
+            params: params
+        });
+        return res;
+    }
 }
 
 export default new TripsService();
