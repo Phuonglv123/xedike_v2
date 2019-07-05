@@ -9,6 +9,8 @@ import SearchRouteScene from "../../scene/SearchRouteScene/SearchRouteScene";
 import NotFound404Scene from "../../scene/NotFound404Scene/NotFound404Scene";
 import MyHeader from "../HeaderComponents/MyHeader";
 import MyFooter from "../FooterComponents/MyFooter";
+import {DriverRoute} from "./PrivateRoute";
+import CreateRouteScene from "../../scene/DriverScene/CreateRouteScene";
 
 const {Content} = Layout;
 
@@ -20,10 +22,16 @@ export const routes = [
     }, {
         path: AppUrl.searchRoute(),
         component: SearchRouteScene,
-    }, {
-        component: NotFound404Scene
     }
 ];
+
+export const routesDriver = [
+    {
+        path: AppUrl.createRoute(),
+        exact: true,
+        component: CreateRouteScene
+    }
+]
 
 class AppRoute extends Component {
     render() {
@@ -36,6 +44,11 @@ class AppRoute extends Component {
                             <Switch>
                                 {routes.map((route, index) => (
                                     <Route key={index} path={route.path} exact={route.exact}
+                                           component={route.component} props={route.props}/>
+                                ))}
+
+                                {routesDriver.map((route, index) => (
+                                    <DriverRoute key={index} path={route.path} exact={route.exact}
                                            component={route.component} props={route.props}/>
                                 ))}
                             </Switch>

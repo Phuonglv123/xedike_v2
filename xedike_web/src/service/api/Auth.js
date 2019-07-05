@@ -30,6 +30,7 @@ class Auth {
 
     logOut = () => {
         localStorage.removeItem('user');
+        localStorage.removeItem('accountType');
         jwt = null;
     };
 
@@ -45,6 +46,7 @@ class Auth {
         try {
             if (user) {
                 localStorage.setItem('user', JSON.stringify(user));
+                localStorage.setItem('accountType', user.user.accountType)
             }
         } catch (e) {
             console.log(e);

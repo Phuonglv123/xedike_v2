@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {List, Row, Col, Icon, Avatar, Rate, Button} from "antd";
+import {List, Row, Col, Icon, Avatar, Rate, Button, Input} from "antd";
 import './SearchRoute.css';
 import {connect} from "react-redux";
 import TripsService from "../../service/tripsService";
@@ -34,8 +34,18 @@ class SearchRouteScene extends Component {
         });
     };
 
-    getInfoDriver = async (idDriver) => {
-        let res = await usersService.getDetailsDriver({idDriver})
+
+    async getInfoDriver(idDriver) {
+        let res;
+        for (let i = 0; i < this.state.data.length; i++) {
+            res = await usersService.getDetailsDriver(this.state.data[i].driverID);
+            this.state.data[i]['res'] = res
+        }
+        return res;
+    }
+
+    async doTask() {
+        let result = await this.getInfoDriver();
     }
 
     dropDownItem(item) {
@@ -48,7 +58,6 @@ class SearchRouteScene extends Component {
 
     render() {
         const {data} = this.state;
-        console.log(data)
         return (
             <div className='component-search'>
                 <div>
