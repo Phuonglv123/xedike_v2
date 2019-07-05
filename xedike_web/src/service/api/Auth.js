@@ -46,7 +46,7 @@ class Auth {
         try {
             if (user) {
                 localStorage.setItem('user', JSON.stringify(user));
-                localStorage.setItem('accountType', user.user.accountType)
+                localStorage.setItem('accountType', user.user.accountType);
             }
         } catch (e) {
             console.log(e);
