@@ -52,8 +52,8 @@ img {
 
 }
 
-.ant-menu-item:hover {
-    color: black !important;
+.ant-menu-item a:hover {
+    color: white !important;
 }
 
 /*.ant-layout-header {*/

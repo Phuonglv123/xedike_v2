@@ -51,6 +51,7 @@ class AppRoute extends Component {
                                     <DriverRoute key={index} path={route.path} exact={route.exact}
                                            component={route.component} props={route.props}/>
                                 ))}
+                                <Route component={NotFound404Scene}/>
                             </Switch>
                         </div>
                     </Content>

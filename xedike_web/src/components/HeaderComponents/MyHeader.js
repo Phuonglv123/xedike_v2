@@ -30,7 +30,7 @@ class MyHeader extends Component {
         const user = this.props.user;
         console.log(localStorage.getItem('accountType') === 'driver' ? 1 : 2)
         return (
-            <Header style={{background: "rgb(24, 144, 255)"}}>
+            <Header style={{background: "#095aa9"}}>
                 <div style={{
                     display: 'flex',
                     justifyContent: 'space-between',
@@ -44,11 +44,15 @@ class MyHeader extends Component {
                             <h1>Share Car</h1>
                         </div>
                     </Link>
-                    {this.props.user ? <Menu
-                        style={{background: "rgb(24, 144, 255)", lineHeight: '64px'}}
+                    <Menu
+                        style={{background: "#095aa9", lineHeight: '64px'}}
                         mode="horizontal"
                     >
-                        <Menu.Item key="Home">Home</Menu.Item>
+                        <Menu.Item key="Home">
+                            <Link to='/'>
+                                Home
+                            </Link>
+                        </Menu.Item>
                         {user && user.user.accountType === 'passenger' ?
                             <Menu.Item key="my_route">My Route</Menu.Item> :
                             <Menu.Item key="registerTrip">
@@ -74,18 +78,18 @@ class MyHeader extends Component {
                             </Dropdown>
                         </Menu.Item>
                     </Menu> : <Menu
-                        style={{background: "rgb(24, 144, 255)", lineHeight: '64px'}}
-                        mode="horizontal"
-                    >
-                        <Menu.Item key="1">Home</Menu.Item>
-                        <Menu.Item key="list_route">List Route</Menu.Item>
-                        <Menu.Item key="2" onClick={() => {
-                            this.setState({signIn: !this.state.signIn})
-                        }}>sign in</Menu.Item>
-                        <Menu.Item key="3" onClick={() => {
-                            this.setState({signUp: !this.state.signUp})
-                        }}>sign up</Menu.Item>
-                    </Menu>}
+                    style={{background: "#095aa9", lineHeight: '64px'}}
+                    mode="horizontal"
+                >
+                    <Menu.Item key="1">Home</Menu.Item>
+                    <Menu.Item key="list_route">List Route</Menu.Item>
+                    <Menu.Item key="2" onClick={() => {
+                        this.setState({signIn: !this.state.signIn})
+                    }}>sign in</Menu.Item>
+                    <Menu.Item key="3" onClick={() => {
+                        this.setState({signUp: !this.state.signUp})
+                    }}>sign up</Menu.Item>
+                </Menu>
                 </div>
 
                 {this.state.signIn ? <LoginComponents onClose={() => {

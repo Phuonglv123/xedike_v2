@@ -53,6 +53,37 @@ class ItemsBooking extends Component {
                                     <p>Card content</p>
                                 </Card>
                             </Col>
+
+                            <Col span={8}>
+                                <Card title="Information Customer" style={{width: '100%'}}>
+                                    <Form.Item label='Full name: '>
+                                        {getFieldDecorator('Full name', {
+                                            rules: [{
+                                                required: true,
+                                                message: 'Please input full name!'
+                                            }],
+                                        })(<Input
+                                            value={user ? user.user.firstname + '' + user.user.lastname : null}/>)}
+                                    </Form.Item>
+                                    <Form.Item label='Phone number: '>
+                                        {getFieldDecorator('Phone number', {
+                                            rules: [{
+                                                required: true,
+                                                message: 'Please input phone number!'
+                                            }],
+                                        })(<Input value={user ? user.user.phone : null}/>)}
+                                    </Form.Item>
+                                    <Form.Item label='Email: '>
+                                        {getFieldDecorator('Email', {
+                                            rules: [{
+                                                required: true,
+                                                message: 'Please input email'
+                                            }],
+                                        })(<Input placeholder='Enter Email'/>)}
+                                    </Form.Item>
+                                </Card>
+                            </Col>
+
                             <Col span={8}>
                                 <Card title="Select From/To" style={{width: '100%'}}>
                                     <Form.Item label="Location Form">
@@ -70,6 +101,10 @@ class ItemsBooking extends Component {
                                         })(<Input onChange={this.handleChange.bind(this)} name='locationGetOff'
                                                   value={this.state.locationGetOff}/>)}
                                     </Form.Item>
+                                    <Form.Item label='Note: '>
+                                        <Input placeholder='Enter Note' value={this.state.notes} name='notes'
+                                               onChange={this.handleChange.bind(this)}/>
+                                    </Form.Item>
                                     <Form.Item label="Payment method">
                                         {getFieldDecorator('gender', {
                                             rules: [{required: true, message: 'Please select your gender!'}],
@@ -84,23 +119,6 @@ class ItemsBooking extends Component {
                                                 <Option value="internetBanking">Internet Banking</Option>
                                             </Select>,
                                         )}
-                                    </Form.Item>
-                                </Card>
-                            </Col>
-                            <Col span={8}>
-                                <Card title="Information Customer" style={{width: '100%'}}>
-                                    <Form.Item label='Full name: '>
-                                        <Input value={user ? user.user.firstname + '' + user.user.lastname : null}/>
-                                    </Form.Item>
-                                    <Form.Item label='Phone number: '>
-                                        <Input value={user ? user.user.phone : null}/>
-                                    </Form.Item>
-                                    <Form.Item label='Email: '>
-                                        <Input placeholder='Enter Email'/>
-                                    </Form.Item>
-                                    <Form.Item label='Note: '>
-                                        <Input placeholder='Enter Note' value={this.state.notes} name='notes'
-                                               onChange={this.handleChange.bind(this)}/>
                                     </Form.Item>
                                 </Card>
                             </Col>
