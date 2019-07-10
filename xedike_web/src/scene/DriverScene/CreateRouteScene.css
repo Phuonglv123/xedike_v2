@@ -1,11 +1,9 @@
 .component-createRoute .icon {
-  font-size: 18px;
-}
+  font-size: 18px; }
 .component-createRoute .background-home {
   height: 180px;
   width: 100%;
-  background-color: #096dd9;
-}
+  background-color: #096dd9; }
 .component-createRoute .form-booking {
   position: relative;
   top: -25px;
@@ -14,16 +12,13 @@
   border-radius: 8px;
   width: 90%;
   height: 100px;
-  background-color: #f8c13c;
-}
+  background-color: #f8c13c; }
 .component-createRoute .list-info-driver {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-.component-createRoute .list-info-driver span {
-  font-size: 14px;
-  font-weight: 500;
-}
+  align-items: center; }
+  .component-createRoute .list-info-driver span {
+    font-size: 14px;
+    font-weight: 500; }
 
 /*# sourceMappingURL=CreateRouteScene.css.map */

@@ -63,6 +63,7 @@ class CreateRouteScene extends Component {
     render() {
         const user = this.props.user.user;
         const {dataDriver} = this.state;
+        console.log(dataDriver)
         const {getFieldDecorator} = this.props.form;
         return (
             <div className='component-createRoute'>
@@ -72,7 +73,7 @@ class CreateRouteScene extends Component {
                         <Row gutter={16}>
                             <Col span={8}>
                                 <Card title="Information Driver" bordered={true} style={{width: '100%'}}>
-                                    <List
+                                    {dataDriver ? <List
                                         header={null}
                                         footer={null}
                                         dataSource={dataDriver.carInfo}
@@ -122,8 +123,11 @@ class CreateRouteScene extends Component {
                                                 </div>
                                             </List.Item>
                                         )}
-                                    />
+                                    /> : null}
 
+                                    {dataDriver.noProfile && <div>
+                                        <Button>Create profile</Button>
+                                    </div>}
                                 </Card>
                             </Col>
                             <Col span={16}>

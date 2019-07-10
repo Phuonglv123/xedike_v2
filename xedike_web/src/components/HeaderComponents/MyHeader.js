@@ -44,7 +44,7 @@ class MyHeader extends Component {
                             <h1>Share Car</h1>
                         </div>
                     </Link>
-                    <Menu
+                    {user ? <Menu
                         style={{background: "#095aa9", lineHeight: '64px'}}
                         mode="horizontal"
                     >
@@ -78,20 +78,23 @@ class MyHeader extends Component {
                             </Dropdown>
                         </Menu.Item>
                     </Menu> : <Menu
-                    style={{background: "#095aa9", lineHeight: '64px'}}
-                    mode="horizontal"
-                >
-                    <Menu.Item key="1">Home</Menu.Item>
-                    <Menu.Item key="list_route">List Route</Menu.Item>
-                    <Menu.Item key="2" onClick={() => {
-                        this.setState({signIn: !this.state.signIn})
-                    }}>sign in</Menu.Item>
-                    <Menu.Item key="3" onClick={() => {
-                        this.setState({signUp: !this.state.signUp})
-                    }}>sign up</Menu.Item>
-                </Menu>
-                </div>
+                        style={{background: "#095aa9", lineHeight: '64px'}}
+                        mode="horizontal"
+                    >
+                        <Menu.Item key="Home">
+                            <Link to='/'>
+                                Home
+                            </Link>
+                        </Menu.Item>
+                        <Menu.Item key="2" onClick={() => {
+                            this.setState({signIn: !this.state.signIn})
+                        }}>sign in</Menu.Item>
+                        <Menu.Item key="3" onClick={() => {
+                            this.setState({signUp: !this.state.signUp})
+                        }}>sign up</Menu.Item>
+                    </Menu>}
 
+                </div>
                 {this.state.signIn ? <LoginComponents onClose={() => {
                     this.setState({signIn: !this.state.signIn})
                 }}/> : null}
