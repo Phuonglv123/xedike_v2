@@ -1,0 +1,14 @@
+.componentProfile .background-home {
+  height: 180px;
+  width: 100%;
+  background-color: #096dd9; }
+.componentProfile .contentProfile {
+  width: 90%;
+  margin: 30px auto;
+  padding-bottom: 30px; }
+  .componentProfile .contentProfile .avatarProfile {
+    background-color: white;
+    border-radius: 3px;
+    margin-bottom: 20px; }
+
+/*# sourceMappingURL=CreateProfileDriver.css.map */

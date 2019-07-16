@@ -1,0 +1,23 @@
+$primary-color: #096dd9;
+$second-color: #f8c13c;
+
+.componentProfile {
+
+  .background-home {
+    height: 180px;
+    width: 100%;
+    background-color: $primary-color;
+  }
+
+  .contentProfile {
+    width: 90%;
+    margin: 30px auto;
+    padding-bottom: 30px;
+
+    .avatarProfile {
+      background-color: white;
+      border-radius: 3px;
+      margin-bottom: 20px;
+    }
+  }
+}

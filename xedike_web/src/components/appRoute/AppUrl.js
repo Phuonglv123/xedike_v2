@@ -8,8 +8,14 @@ class AppUrl {
     }
 
     createRoute() {
-        return '/create-route'
+        return '/driver/create-route/'
     }
+
+    profileDriver(){
+        return '/driver/profileDriver/'
+    }
+
+
 }
 
 export default new AppUrl();
