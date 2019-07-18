@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import {Row, Col, Card, Menu, Icon} from "antd";
-import {Link} from "react-router-dom";
+import {Link, Switch} from "react-router-dom";
 import './CreateProfileDriver.css';
 import {DriverRoute} from "../../../components/appRoute/PrivateRoute";
 import InformationPersonal from "./MenuProfile/InformationPersonal";
+import AppUrl from "../../../components/appRoute/AppUrl";
+import connectInfoDriver from "./MenuProfile/InformationCar";
 
 const SubMenu = Menu.SubMenu;
 
@@ -24,13 +26,13 @@ class CreateProfileDriver extends Component {
                                           defaultOpenKeys={['1']}
                                           defaultSelectedKeys={['1']}>
                                         <Menu.Item key="1">
-                                            <Link>
+                                            <Link to={AppUrl.personalInfo()}>
                                                 <Icon type="compass"/>
                                                 <span>Information Personal</span>
                                             </Link>
                                         </Menu.Item>
                                         <Menu.Item key='2'>
-                                            <Link>
+                                            <Link to={AppUrl.carInfo()}>
                                                 <Icon type="compass"/>
                                                 <span>Information Car</span>
                                             </Link>
@@ -51,7 +53,11 @@ class CreateProfileDriver extends Component {
                                 </div>
                             </Col>
                             <Col span={18}>
-                                <DriverRoute component={InformationPersonal}/>
+                                <Switch>
+                                    <DriverRoute path={AppUrl.personalInfo()} component={InformationPersonal}
+                                                 exact={true}/>
+                                    <DriverRoute path={AppUrl.carInfo()} component={connectInfoDriver}/>
+                                </Switch>
                             </Col>
                         </Row>
                     </div>

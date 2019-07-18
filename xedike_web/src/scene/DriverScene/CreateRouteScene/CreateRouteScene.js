@@ -307,11 +307,9 @@ class CreateRouteScene extends Component {
 function mapStateToProps(state) {
     const {users, authentication} = state;
     const {user} = authentication;
-    const getInfoDriver = state.getInfoDriver;
     return {
         user,
         users,
-        getInfoDriver
     };
 }
 

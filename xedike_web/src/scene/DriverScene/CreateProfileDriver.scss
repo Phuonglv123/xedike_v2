@@ -1,0 +1,15 @@
+$primary-color: #096dd9;
+$second-color: #f8c13c;
+
+.component-createDriver {
+  .background-home {
+    height: 180px;
+    width: 100%;
+    background-color: $primary-color;
+  }
+
+  .cardInfo {
+    height: 300px;
+    background-color: aliceblue;
+  }
+}

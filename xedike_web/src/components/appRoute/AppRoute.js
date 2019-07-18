@@ -12,6 +12,7 @@ import MyFooter from "../FooterComponents/MyFooter";
 import {DriverRoute} from "./PrivateRoute";
 import CreateRouteScene from "../../scene/DriverScene/CreateRouteScene/CreateRouteScene";
 import CreateProfileDriver from "../../scene/DriverScene/CreateProfileScene/CreateProfileDriver";
+import connectInfoDriver from "../../scene/DriverScene/CreateProfileScene/MenuProfile/InformationCar";
 
 const {Content} = Layout;
 
@@ -35,7 +36,7 @@ export const routesDriver = [
     {
         path: AppUrl.profileDriver(),
         component: CreateProfileDriver
-    }
+    },
 ]
 
 class AppRoute extends Component {

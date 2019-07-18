@@ -76,6 +76,7 @@ function registerPassenger(passenger) {
 
 function getInfoDriverActions(id) {
     return dispatch => {
+        debugger
         dispatch(request({id}));
         usersService.getDetailsDriver({id})
             .then(

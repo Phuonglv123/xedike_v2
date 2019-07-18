@@ -15,6 +15,14 @@ class AppUrl {
         return '/driver/profileDriver/'
     }
 
+    carInfo(){
+        return '/driver/carInfo/'
+    }
+
+    personalInfo(){
+        return '/driver/personalInfo'
+    }
+
 
 }
 
