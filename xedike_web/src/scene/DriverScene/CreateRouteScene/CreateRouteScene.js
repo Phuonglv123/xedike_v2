@@ -26,6 +26,8 @@ class CreateRouteScene extends Component {
 
             data: [],
             dataDriver: [],
+
+            stepCreateCurrent: false
         }
     }
 
@@ -55,8 +57,10 @@ class CreateRouteScene extends Component {
 
     async componentDidMount() {
         let id = this.props.user.user._id;
-        const {dispatch} = this.props;
-        await dispatch(userActions.getInfoDriverActions(id));
+        let res = await usersService.getDetailsDriver(id);
+        this.setState({
+            dataDriver: res
+        });
     }
 
 
