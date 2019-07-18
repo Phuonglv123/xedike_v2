@@ -1,4 +1,4 @@
-import { userConstants } from '../contants/userContants';
+import {userConstants} from '../contants/userContants';
 
 export function users(state = {}, action) {
     switch (action.type) {
@@ -20,7 +20,7 @@ export function users(state = {}, action) {
                 ...state,
                 items: state.items.map(user =>
                     user.id === action.id
-                        ? { ...user, deleting: true }
+                        ? {...user, deleting: true}
                         : user
                 )
             };
@@ -36,9 +36,9 @@ export function users(state = {}, action) {
                 items: state.items.map(user => {
                     if (user.id === action.id) {
                         // make copy of user without 'deleting:true' property
-                        const { deleting, ...userCopy } = user;
+                        const {deleting, ...userCopy} = user;
                         // return copy of user with 'deleteError:[error]' property
-                        return { ...userCopy, deleteError: action.error };
+                        return {...userCopy, deleteError: action.error};
                     }
 
                     return user;
@@ -46,5 +46,20 @@ export function users(state = {}, action) {
             };
         default:
             return state
+    }
+}
+
+export function getInfoDriver(state = {}, action) {
+    switch (action.type) {
+        case userConstants.GET_DRIVER_REQUEST:
+            return {
+                getInfoDriver: true
+            };
+        case userConstants.GET_DRIVER_SUCCESS:
+            return {resultInfoDriver: action.res};
+        case userConstants.GET_DRIVER_FAILURE:
+            return {};
+        default:
+            return state;
     }
 }

@@ -6,9 +6,7 @@ import usersService from "../service/usersService";
 export const userActions = {
     login,
     registerPassenger,
-    // registerDriver,
-    // getAll,
-    // delete: _delete
+    getInfoDriverActions,
 };
 
 function login(username, password) {
@@ -76,85 +74,32 @@ function registerPassenger(passenger) {
     }
 }
 
-// function registerDriver(user) {
-//     return dispatch => {
-//         dispatch(request(user));
-//
-//         userService.registerDriver(user)
-//             .then(
-//                 user => {
-//                     dispatch(success());
-//                     dispatch(alertActions.success('Registration successful'));
-//                 },
-//                 error => {
-//                     dispatch(failure(error));
-//                     dispatch(alertActions.error(error));
-//                 }
-//             );
-//     };
-//
-//     function request(user) {
-//         return {type: userConstants.REGISTER_REQUEST, user}
-//     }
-//
-//     function success(user) {
-//         return {type: userConstants.REGISTER_SUCCESS, user}
-//     }
-//
-//     function failure(error) {
-//         return {type: userConstants.REGISTER_FAILURE, error}
-//     }
-// }
-//
-// function getAll() {
-//     return dispatch => {
-//         dispatch(request());
-//
-//         userService.getAll()
-//             .then(
-//                 users => dispatch(success(users)),
-//                 error => dispatch(failure(error))
-//             );
-//     };
-//
-//     function request() {
-//         return {type: userConstants.GETALL_REQUEST}
-//     }
-//
-//     function success(users) {
-//         return {type: userConstants.GETALL_SUCCESS, users}
-//     }
-//
-//     function failure(error) {
-//         return {type: userConstants.GETALL_FAILURE, error}
-//     }
-// }
-//
-// // prefixed function name with underscore because delete is a reserved word in javascript
-// function _delete(id) {
-//     return dispatch => {
-//         dispatch(request(id));
-//
-//         userService.delete(id)
-//             .then(
-//                 user => {
-//                     dispatch(success(id));
-//                 },
-//                 error => {
-//                     dispatch(failure(id, error));
-//                 }
-//             );
-//     };
-//
-//     function request(id) {
-//         return {type: userConstants.DELETE_REQUEST, id}
-//     }
-//
-//     function success(id) {
-//         return {type: userConstants.DELETE_SUCCESS, id}
-//     }
-//
-//     function failure(id, error) {
-//         return {type: userConstants.DELETE_FAILURE, id, error}
-//     }
-// }
+function getInfoDriverActions(id) {
+    return dispatch => {
+        dispatch(request({id}));
+        usersService.getDetailsDriver({id})
+            .then(
+                res => {
+                    dispatch(success(res))
+                },
+                error => {
+                    dispatch(failure(error));
+                    dispatch(alertActions.error(error));
+                }
+            )
+
+    }
+
+    function request(res) {
+        return {type: userConstants.REGISTER_REQUEST, res}
+    }
+
+    function success(res) {
+        return {type: userConstants.REGISTER_SUCCESS, res}
+    }
+
+    function failure(error) {
+        return {type: userConstants.REGISTER_FAILURE, error}
+    }
+
+}

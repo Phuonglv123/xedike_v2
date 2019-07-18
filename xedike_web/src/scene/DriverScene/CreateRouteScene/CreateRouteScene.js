@@ -4,6 +4,8 @@ import tripsService from "../../../service/tripsService";
 import {connect} from "react-redux";
 import usersService from "../../../service/usersService";
 import './CreateRouteScene.css';
+import {getInfoDriver} from "../../../reducers/userReducers";
+import {userActions} from "../../../actions/userActions";
 
 class CreateRouteScene extends Component {
     constructor(props) {
@@ -53,17 +55,14 @@ class CreateRouteScene extends Component {
 
     async componentDidMount() {
         let id = this.props.user.user._id;
-        let res = await usersService.getDetailsDriver(id);
-        this.setState({
-            dataDriver: res
-        });
+        const {dispatch} = this.props;
+        await dispatch(userActions.getInfoDriverActions(id));
     }
 
 
     render() {
         const user = this.props.user.user;
         const {dataDriver} = this.state;
-        console.log(dataDriver)
         const {getFieldDecorator} = this.props.form;
         return (
             <div className='component-createRoute'>
@@ -304,9 +303,11 @@ class CreateRouteScene extends Component {
 function mapStateToProps(state) {
     const {users, authentication} = state;
     const {user} = authentication;
+    const getInfoDriver = state.getInfoDriver;
     return {
         user,
-        users
+        users,
+        getInfoDriver
     };
 }
 
