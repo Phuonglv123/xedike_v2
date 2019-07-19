@@ -28,7 +28,7 @@ class MyHeader extends Component {
 
     render() {
         const user = this.props.user;
-        console.log(user)
+        const accountType = localStorage.getItem('accountType')
         return (
             <Header style={{background: "#095aa9"}}>
                 <div style={{
@@ -53,10 +53,10 @@ class MyHeader extends Component {
                                 Home
                             </Link>
                         </Menu.Item>
-                        {user && user.user.accountType === 'passenger' ?
+                        {accountType === 'passenger' ?
                             <Menu.Item key="my_route">My Route</Menu.Item> :
                             <Menu.Item key="registerTrip">
-                                <Link to={AppUrl.createRoute(user.payload.id)}>Trip register</Link>
+                                <Link to={AppUrl.createRoute()}>Trip register</Link>
                             </Menu.Item>}
                         <Menu.Item key="Logout">
                             <Dropdown overlay={<Menu>

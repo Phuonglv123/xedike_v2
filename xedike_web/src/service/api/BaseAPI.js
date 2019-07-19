@@ -56,6 +56,9 @@ export class BaseAPI {
                 return res
             } else {
                 return res.data;
+                Modal.success({
+                    title: 'Success'
+                })
             }
         } catch (e) {
             Modal.error({

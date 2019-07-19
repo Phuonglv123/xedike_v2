@@ -1,36 +1,36 @@
 import React, {Component} from 'react';
 import {Card, Col, Input, Row} from "antd";
+import {connect} from "react-redux";
 
 class InformationPersonal extends Component {
     render() {
+        const user = this.props.user.user
         return (
             <div>
                 <Card>
-                    <Row>
+                    <Row gutter={32} style={{lineHeight: 3}}>
                         <Col span={12}>
                             <div>
                                 <label htmlFor="label">First name:</label>
-                                <Input placeholder="Name"/>
+                                <Input value={user.firstname}/>
                             </div>
                         </Col>
                         <Col span={12}>
                             <div>
                                 <label htmlFor="label">Last Name:</label>
-                                <Input placeholder="Name"/>
+                                <Input value={user.lastname}/>
                             </div>
                         </Col>
-                    </Row>
-                    <Row>
                         <Col span={12}>
                             <div>
                                 <label htmlFor="label">Phone number:</label>
-                                <Input placeholder="Name"/>
+                                <Input value={user.phone}/>
                             </div>
                         </Col>
                         <Col span={12}>
                             <div>
                                 <label htmlFor="label">Status:</label>
-                                <Input placeholder="Name"/>
+                                <Input value={user.accountType}/>
                             </div>
                         </Col>
                     </Row>
@@ -40,4 +40,15 @@ class InformationPersonal extends Component {
     }
 }
 
-export default InformationPersonal;
+function mapStateToProps(state) {
+    const {users, authentication} = state;
+    const {user} = authentication;
+    return {
+        user,
+        users
+    };
+}
+
+const connectInfoPreson = connect(mapStateToProps)(InformationPersonal)
+
+export default connectInfoPreson;

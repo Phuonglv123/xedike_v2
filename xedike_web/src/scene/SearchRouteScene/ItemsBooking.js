@@ -40,13 +40,13 @@ class ItemsBooking extends Component {
 
     render() {
         const {getFieldDecorator} = this.props.form;
-        const user = this.props.user;
+        const user = this.props.user.user;
         return (
             <div className='bck-itemBooking'>
                 <div>
                     <Form onSubmit={this.getBookTrip}>
                         <Row>
-                            <Col span={8}>
+                            <Col span={6}>
                                 <Card title="Information Driver" style={{width: '100%'}}>
                                     <p>Card content</p>
                                     <p>Card content</p>
@@ -54,37 +54,28 @@ class ItemsBooking extends Component {
                                 </Card>
                             </Col>
 
-                            <Col span={8}>
+                            <Col span={6}>
                                 <Card title="Information Customer" style={{width: '100%'}}>
-                                    <Form.Item label='Full name: '>
-                                        {getFieldDecorator('Full name', {
-                                            rules: [{
-                                                required: true,
-                                                message: 'Please input full name!'
-                                            }],
-                                        })(<Input
-                                            value={user ? user.user.firstname + '' + user.user.lastname : null}/>)}
-                                    </Form.Item>
-                                    <Form.Item label='Phone number: '>
-                                        {getFieldDecorator('Phone number', {
-                                            rules: [{
-                                                required: true,
-                                                message: 'Please input phone number!'
-                                            }],
-                                        })(<Input value={user ? user.user.phone : null}/>)}
-                                    </Form.Item>
-                                    <Form.Item label='Email: '>
-                                        {getFieldDecorator('Email', {
-                                            rules: [{
-                                                required: true,
-                                                message: 'Please input email'
-                                            }],
-                                        })(<Input placeholder='Enter Email'/>)}
-                                    </Form.Item>
+                                    <div style={{display: 'grid'}}>
+                                        <span>First name:</span>
+                                        <span>{user.firstname}</span>
+                                    </div>
+                                    <div style={{display: 'grid'}}>
+                                        <span>Last name:</span>
+                                        <span>{user.lastname}</span>
+                                    </div>
+                                    <div style={{display: 'grid'}}>
+                                        <span>Email:</span>
+                                        <span>{user.email}</span>
+                                    </div>
+                                    <div style={{display: 'grid'}}>
+                                        <span>Phone:</span>
+                                        <span>{user.phone}</span>
+                                    </div>
                                 </Card>
                             </Col>
 
-                            <Col span={8}>
+                            <Col span={12}>
                                 <Card title="Select From/To" style={{width: '100%'}}>
                                     <Form.Item label="Location Form">
                                         {getFieldDecorator('Location Form', {

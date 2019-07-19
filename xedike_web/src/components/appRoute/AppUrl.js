@@ -8,19 +8,27 @@ class AppUrl {
     }
 
     createRoute() {
-        return '/driver/create-route/'
+        return '/driver/trips/'
     }
 
-    profileDriver(){
-        return '/driver/profileDriver/'
+    managerTrip() {
+        return `${this.createRoute()}managerTrip/`
     }
 
-    carInfo(){
-        return '/driver/carInfo/'
+    profileDriver() {
+        return '/driver/profile/'
     }
 
-    personalInfo(){
-        return '/driver/personalInfo'
+    carInfo() {
+        return `${this.profileDriver()}carInfo/`
+    }
+
+    historyRoute() {
+        return `${this.profileDriver()}historyRoute`
+    }
+
+    ratePassenger() {
+        return `${this.profileDriver()}ratePassenger`
     }
 
 
