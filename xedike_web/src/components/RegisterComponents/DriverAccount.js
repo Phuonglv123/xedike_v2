@@ -16,6 +16,7 @@ class DriverAccount extends Component {
             confirmedpassword: '',
             phone: '',
             birthday: '',
+            email: '',
             loading: false,
         };
         this.handleChange = this.handleChange.bind(this);
@@ -34,9 +35,9 @@ class DriverAccount extends Component {
         this.props.form.validateFields(async (err, values) => {
             if (!err) {
                 this.setState({loading: true});
-                const {username, password, confirmedpassword, firstname, lastname, phone, birthday} = this.state;
+                const {username, password, confirmedpassword, firstname, lastname, email, phone, birthday} = this.state;
                 usersService.registerDriver({
-                    username, password, confirmedpassword, firstname, lastname, phone, birthday
+                    username, password, confirmedpassword, firstname, lastname, email, phone, birthday
                 });
                 this.setState({
                     loading: false,
@@ -47,7 +48,7 @@ class DriverAccount extends Component {
 
     render() {
         const {getFieldDecorator} = this.props.form;
-        const {username, password, confirmedpassword, firstname, lastname, phone, birthday} = this.state;
+        const {username, password, confirmedpassword, firstname, lastname, email, phone, birthday} = this.state;
         return (
             <BlockUI blocking={this.state.loading}>
                 <div id='loginComponent'>
@@ -55,7 +56,7 @@ class DriverAccount extends Component {
                         <h4>Register driver account</h4>
                         <span>You have account? <span>Login</span></span>
                     </div>
-                    <div id='components-form-demo-normal-login'>
+                    <div id='components-form-demo-normal-login' style={{lineHeight: 0.5}}>
                         <Form onSubmit={this.handleSubmit} className="login-form">
                             <Form.Item>
                                 {getFieldDecorator('userName', {
@@ -98,6 +99,23 @@ class DriverAccount extends Component {
                                                           style={{color: 'rgba(0,0,0,.25)'}}/>}
                                             type="password" placeholder="Re-Password" name="confirmedpassword"
                                             value={confirmedpassword}
+                                            onChange={this.handleChange}
+                                        />
+                                    </div>
+                                )}
+                            </Form.Item>
+
+                            <Form.Item>
+                                {getFieldDecorator('email', {
+                                    rules: [{required: true, message: 'Please input your Email!'}],
+                                })(
+                                    <div className="label-account">
+                                        <span>Email</span>
+                                        <Input
+                                            prefix={<Icon type="lock"
+                                                          style={{color: 'rgba(0,0,0,.25)'}}/>}
+                                            type="email" placeholder="Email" name="email"
+                                            value={email}
                                             onChange={this.handleChange}
                                         />
                                     </div>

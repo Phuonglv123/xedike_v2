@@ -35,6 +35,15 @@ class usersService extends BaseAPI {
         });
         return res;
     }
+
+    async historyTripForDriver(id){
+        const res = await this.apiCall({
+            url: `driver/managerTrip/${id}`,
+            method: 'GET'
+        });
+
+        return res;
+    }
 }
 
 export default new usersService();

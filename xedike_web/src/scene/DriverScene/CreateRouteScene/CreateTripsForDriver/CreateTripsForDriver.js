@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Button, Card, Checkbox, Col, Form, Icon, Input, Row} from "antd";
 import tripsService from "../../../../service/tripsService";
+import AppUrl from "../../../../components/appRoute/AppUrl";
 
 class CreateTripsForDriver extends Component {
     constructor(props) {
@@ -41,14 +42,14 @@ class CreateTripsForDriver extends Component {
     onSubmit = async (e) => {
         e.preventDefault();
         let {wifi, food, drink, music, pet, wetTowel, locationFrom, locationTo, startTime, endTime, fee, availableSeats} = this.state;
-        debugger
         let res = await tripsService.createTrip({
             wifi, food, drink, music, pet, wetTowel, locationFrom, locationTo, startTime, endTime, fee, availableSeats
         });
 
         this.setState({
             data: res
-        })
+        });
+        this.props.push(AppUrl.home())
     };
 
     render() {

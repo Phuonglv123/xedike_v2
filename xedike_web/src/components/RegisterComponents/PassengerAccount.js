@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Checkbox, Col, Form, Icon, Input, Row} from "antd";
-import {userActions} from "../../actions/userActions";
+import {Button, Col, Form, Icon, Input, Row} from "antd";
 import {connect} from "react-redux";
 import usersService from "../../service/usersService";
 import BlockUI from "../BlockUI/BlockUI";
@@ -17,6 +16,7 @@ class PassengerAccount extends Component {
             confirmedpassword: '',
             phone: '',
             birthday: '',
+            email: '',
             loading: false,
         };
         this.handleChange = this.handleChange.bind(this);
@@ -35,9 +35,9 @@ class PassengerAccount extends Component {
         this.props.form.validateFields(async (err, values) => {
             if (!err) {
                 this.setState({loading: true});
-                const {username, password, confirmedpassword, firstname, lastname, phone, birthday} = this.state;
+                const {username, password, confirmedpassword, firstname,email, lastname, phone, birthday} = this.state;
                 await usersService.registerPassenger({
-                    username, password, confirmedpassword, firstname, lastname, phone, birthday
+                    username, password, confirmedpassword, firstname, lastname,email, phone, birthday
                 });
                 this.setState({
                     loading: false,
@@ -49,7 +49,7 @@ class PassengerAccount extends Component {
 
     render() {
         const {getFieldDecorator} = this.props.form;
-        const {username, password, confirmedpassword, firstname, lastname, phone, birthday} = this.state;
+        const {username, password, confirmedpassword,email, firstname, lastname, phone, birthday} = this.state;
         return (
             <BlockUI blocking={this.state.loading}>
                 <div id='loginComponent'>
@@ -105,6 +105,24 @@ class PassengerAccount extends Component {
                                     </div>
                                 )}
                             </Form.Item>
+
+                            <Form.Item>
+                                {getFieldDecorator('email', {
+                                    rules: [{required: true, message: 'Please input your Email!'}],
+                                })(
+                                    <div className="label-account">
+                                        <span>Email</span>
+                                        <Input
+                                            prefix={<Icon type="lock"
+                                                          style={{color: 'rgba(0,0,0,.25)'}}/>}
+                                            type="email" placeholder="Email" name="email"
+                                            value={email}
+                                            onChange={this.handleChange}
+                                        />
+                                    </div>
+                                )}
+                            </Form.Item>
+
                             <Row gutter={16}>
                                 <Col span={12}>
                                     <Form.Item>

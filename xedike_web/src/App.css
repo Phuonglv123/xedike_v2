@@ -56,6 +56,10 @@ img {
     color: white !important;
 }
 
+.ant-form-item{
+    margin-bottom: 5px !important;
+}
+
 /*.ant-layout-header {*/
 /*    background: white !important;*/
 /*}*/
