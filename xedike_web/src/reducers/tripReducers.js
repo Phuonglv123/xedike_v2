@@ -15,3 +15,17 @@ export function searchTrip(state = {}, action) {
             return state
     }
 }
+
+// function createTrips(state = {}, action) {
+//     switch (action.type) {
+//         case tripConstants.CREATE_TRIPS_REQUEST:
+//             return {};
+//         case tripConstants.CREATE_TRIPS_SUCCESS:
+//             return {resultTrip: action.res};
+//         case tripConstants.CREATE_TRIPS_FAILURE:
+//             return {};
+//         default:
+//             return state;
+//     }
+//
+// }

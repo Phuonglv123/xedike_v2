@@ -76,9 +76,8 @@ function registerPassenger(passenger) {
 
 function getInfoDriverActions(id) {
     return dispatch => {
-        debugger
         dispatch(request({id}));
-        usersService.getDetailsDriver({id})
+        usersService.getDetailsDriver(id)
             .then(
                 res => {
                     dispatch(success(res))
@@ -92,15 +91,15 @@ function getInfoDriverActions(id) {
     }
 
     function request(res) {
-        return {type: userConstants.REGISTER_REQUEST, res}
+        return {type: userConstants.GET_DRIVER_REQUEST, res}
     }
 
     function success(res) {
-        return {type: userConstants.REGISTER_SUCCESS, res}
+        return {type: userConstants.GET_DRIVER_SUCCESS, res}
     }
 
     function failure(error) {
-        return {type: userConstants.REGISTER_FAILURE, error}
+        return {type: userConstants.GET_DRIVER_FAILURE, error}
     }
 
 }

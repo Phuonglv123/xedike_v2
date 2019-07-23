@@ -4,6 +4,8 @@ import {Button, Col, Icon, List, Tabs} from 'antd';
 import BlockUI from "../../components/BlockUI/BlockUI";
 import SearchComponent from "../../components/SearchComponent/SearchComponent";
 import tripsService from "../../service/tripsService";
+import {userActions} from "../../actions/userActions";
+import {connect} from "react-redux";
 
 const {TabPane} = Tabs;
 
@@ -34,6 +36,19 @@ class HomeScene extends Component {
             data: res,
             loading: false,
         });
+
+        await this.getInfoDriver();
+    }
+
+    getInfoDriver() {
+        let id;
+        if (this.props.user === undefined) {
+            id = null
+        } else {
+            id = this.props.user.user._id;
+        }
+        const {dispatch} = this.props;
+        dispatch(userActions.getInfoDriverActions(id))
     }
 
     render() {
@@ -142,4 +157,16 @@ class HomeScene extends Component {
     }
 }
 
-export default HomeScene;
+function mapStateToProps(state) {
+    const {users, authentication} = state;
+    const {user} = authentication;
+    return {
+        users,
+        user,
+    }
+
+}
+
+const connectHomeScene = connect(mapStateToProps)(HomeScene);
+
+export default connectHomeScene;

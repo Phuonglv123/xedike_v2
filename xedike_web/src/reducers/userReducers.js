@@ -52,9 +52,7 @@ export function users(state = {}, action) {
 export function getInfoDriver(state = {}, action) {
     switch (action.type) {
         case userConstants.GET_DRIVER_REQUEST:
-            return {
-                getInfoDriver: true
-            };
+            return {resultInfoDriver: action.res};
         case userConstants.GET_DRIVER_SUCCESS:
             return {resultInfoDriver: action.res};
         case userConstants.GET_DRIVER_FAILURE:

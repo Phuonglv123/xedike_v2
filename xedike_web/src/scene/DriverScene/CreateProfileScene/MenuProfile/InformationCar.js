@@ -65,7 +65,6 @@ class InformationCar extends Component {
 
     render() {
         const infoDriver = this.state.dataDriver;
-        console.log(infoDriver);
         return (
             <div>
                 {this.state.error ? <div>

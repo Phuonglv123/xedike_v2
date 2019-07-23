@@ -53,12 +53,9 @@ export class BaseAPI {
                 // window.location = AppUrl.login();
             }
             if (option.returnRaw) {
-                return res
+                return res;
             } else {
                 return res.data;
-                Modal.success({
-                    title: 'Success'
-                })
             }
         } catch (e) {
             Modal.error({

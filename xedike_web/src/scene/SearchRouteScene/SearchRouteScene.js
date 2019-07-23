@@ -34,20 +34,6 @@ class SearchRouteScene extends Component {
         });
     };
 
-
-    async getInfoDriver(idDriver) {
-        let res;
-        for (let i = 0; i < this.state.data.length; i++) {
-            res = await usersService.getDetailsDriver(this.state.data[i].driverID);
-            this.state.data[i]['res'] = res
-        }
-        return res;
-    }
-
-    async doTask() {
-        let result = await this.getInfoDriver();
-    }
-
     dropDownItem(item) {
         this.setState({
             showItem: true,
@@ -58,6 +44,7 @@ class SearchRouteScene extends Component {
 
     render() {
         const {data} = this.state;
+        console.log(data)
         return (
             <div className='component-search'>
                 <div>
@@ -144,7 +131,7 @@ class SearchRouteScene extends Component {
                                             </div>
                                         </Col>
                                     </Row>
-                                    {this.state.showItem[item._id] && <ItemsBooking data={item._id}/>}
+                                    {this.state.showItem[item._id] && <ItemsBooking driverId={item.driverID}/>}
                                 </div>
                             </div>
                         )}
@@ -168,5 +155,5 @@ function mapStateToProps(state) {
 
 }
 
-const connectSearchTrip = connect(mapStateToProps)(SearchRouteScene)
+const connectSearchTrip = connect(mapStateToProps)(SearchRouteScene);
 export default connectSearchTrip;

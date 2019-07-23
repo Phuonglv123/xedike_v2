@@ -2,19 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cfac70fd-87e8-4710-9c96-a9393a0af921" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginComponents/LoginComponents.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginComponents/LoginComponents.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RegisterComponents/DriverAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RegisterComponents/DriverAccount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RegisterComponents/PassengerAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RegisterComponents/PassengerAccount.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/tripActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/tripActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/userActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/userActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LoginComponents/LoginComponents.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginComponents/LoginComponents.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LoginComponents/LoginComponents.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginComponents/LoginComponents.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contants/tripContants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contants/tripContants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/tripReducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/tripReducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/userReducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/userReducers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/MenuProfile/HistoryRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/MenuProfile/HistoryRoute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/MenuProfile/InformationCar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/MenuProfile/InformationCar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scene/DriverScene/CreateRouteScene/CreateTripsForDriver/CreateTripsForDriver.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/DriverScene/CreateRouteScene/CreateTripsForDriver/CreateTripsForDriver.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scene/HomeScene/HomeScene.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/HomeScene/HomeScene.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scene/HomeScene/HomeScene.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/HomeScene/HomeScene.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scene/HomeScene/HomeScene.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/HomeScene/HomeScene.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/usersService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/usersService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scene/HomeScene/HomeScene.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/HomeScene/HomeScene.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scene/SearchRouteScene/ItemsBooking.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/SearchRouteScene/ItemsBooking.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scene/SearchRouteScene/SearchRouteScene.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/SearchRouteScene/SearchRouteScene.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/api/BaseAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/api/BaseAPI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,10 +34,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/MenuProfile/InformationCar.js">
+        <entry file="file://$PROJECT_DIR$/src/scene/SearchRouteScene/SearchRouteScene.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2553">
-              <caret line="183" selection-start-line="183" selection-end-line="192" selection-end-column="66" />
+            <state relative-caret-position="449">
+              <caret line="133" column="92" selection-start-line="133" selection-start-column="92" selection-end-line="133" selection-end-column="92" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scene/HomeScene/HomeScene.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="460">
+              <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -40,21 +55,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scene/HomeScene/HomeScene.scss">
+        <entry file="file://$PROJECT_DIR$/src/scene/SearchRouteScene/ItemsBooking.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="113" column="70" lean-forward="true" selection-start-line="113" selection-start-column="70" selection-end-line="113" selection-end-column="70" />
+            <state relative-caret-position="306">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/MenuProfile/HistoryRoute.js">
+        <entry file="file://$PROJECT_DIR$/src/service/api/BaseAPI.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="26" column="20" selection-start-line="26" selection-start-column="23" selection-end-line="39" selection-end-column="25" />
+            <state relative-caret-position="432">
+              <caret line="57" column="32" lean-forward="true" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/service/api/Auth.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,26 +93,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/service/usersService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
+            <state relative-caret-position="738">
               <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/service/tripsService.js">
+        <entry file="file://$PROJECT_DIR$/src/components/SearchComponent/SearchComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1">
-              <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scene/SearchRouteScene/ItemsBooking.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="22" selection-end-column="10" />
+            <state relative-caret-position="714">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -91,43 +112,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/RegisterComponents/PassengerAccount.js">
+        <entry file="file://$PROJECT_DIR$/src/reducers/userReducers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+            <state relative-caret-position="272">
+              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="n#!!block;n#users#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/RegisterComponents/DriverAccount.js">
+        <entry file="file://$PROJECT_DIR$/src/reducers/Authentication.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="59" column="77" selection-start-line="59" selection-start-column="77" selection-end-line="59" selection-end-column="77" />
+            <state relative-caret-position="170">
+              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#0#38#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/LoginComponents/LoginComponents.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -150,20 +162,15 @@
         <option value="$PROJECT_DIR$/src/components/FooterComponents/MyFooter.js" />
         <option value="$PROJECT_DIR$/src/ultils/config/evn.js" />
         <option value="$PROJECT_DIR$/src/service/api/API.js" />
-        <option value="$PROJECT_DIR$/src/contants/tripContants.js" />
-        <option value="$PROJECT_DIR$/src/actions/tripActions.js" />
         <option value="$PROJECT_DIR$/src/scene/SearchRouteScene/ResultRouteScene.js" />
-        <option value="$PROJECT_DIR$/src/reducers/tripReducers.js" />
         <option value="$PROJECT_DIR$/src/ultils/config/config.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/components/SearchComponent/dataProvince.js" />
         <option value="$PROJECT_DIR$/src/components/SearchComponent/SearchComponent.js" />
-        <option value="$PROJECT_DIR$/src/scene/HomeScene/HomeScene.js" />
         <option value="$PROJECT_DIR$/src/service/tripsService.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/BlockUI/BlockUI.scss" />
         <option value="$PROJECT_DIR$/src/components/LoginComponents/LoginComponents.js" />
-        <option value="$PROJECT_DIR$/src/scene/SearchRouteScene/SearchRouteScene.js" />
         <option value="$PROJECT_DIR$/src/components/appRoute/PrivateRoute.js" />
         <option value="$PROJECT_DIR$/src/service/api/Auth.js" />
         <option value="$PROJECT_DIR$/src/scene/DriverScene/CreateRouteScene.scss" />
@@ -178,26 +185,31 @@
         <option value="$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/CreateProfileDriver.scss" />
         <option value="$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/MenuProfile/RateOfPassenger.js" />
         <option value="$PROJECT_DIR$/src/contants/userContants.js" />
-        <option value="$PROJECT_DIR$/src/reducers/userReducers.js" />
         <option value="$PROJECT_DIR$/src/reducers/index.js" />
-        <option value="$PROJECT_DIR$/src/actions/userActions.js" />
         <option value="$PROJECT_DIR$/src/components/HeaderComponents/MyHeader.js" />
         <option value="$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/MenuProfile/InformationPersonal.js" />
         <option value="$PROJECT_DIR$/src/scene/DriverScene/CreateRouteScene/ManagerTripsForDriver/ManagerTripForDriver.js" />
         <option value="$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/CreateProfileDriver.js" />
         <option value="$PROJECT_DIR$/src/components/appRoute/AppUrl.js" />
         <option value="$PROJECT_DIR$/src/scene/DriverScene/CreateRouteScene/CreateRouteScene.js" />
-        <option value="$PROJECT_DIR$/src/service/api/BaseAPI.js" />
-        <option value="$PROJECT_DIR$/src/scene/SearchRouteScene/ItemsBooking.js" />
         <option value="$PROJECT_DIR$/src/components/RegisterComponents/PassengerAccount.js" />
         <option value="$PROJECT_DIR$/src/components/RegisterComponents/DriverAccount.js" />
         <option value="$PROJECT_DIR$/src/components/LoginComponents/LoginComponents.scss" />
         <option value="$PROJECT_DIR$/src/App.css" />
-        <option value="$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/MenuProfile/InformationCar.js" />
-        <option value="$PROJECT_DIR$/src/scene/DriverScene/CreateRouteScene/CreateTripsForDriver/CreateTripsForDriver.js" />
         <option value="$PROJECT_DIR$/src/scene/HomeScene/HomeScene.scss" />
         <option value="$PROJECT_DIR$/src/service/usersService.js" />
+        <option value="$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/MenuProfile/InformationCar.js" />
+        <option value="$PROJECT_DIR$/src/scene/DriverScene/CreateRouteScene/CreateTripsForDriver/CreateTripsForDriver.js" />
+        <option value="$PROJECT_DIR$/src/actions/tripActions.js" />
+        <option value="$PROJECT_DIR$/src/contants/tripContants.js" />
+        <option value="$PROJECT_DIR$/src/reducers/tripReducers.js" />
+        <option value="$PROJECT_DIR$/src/actions/userActions.js" />
         <option value="$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/MenuProfile/HistoryRoute.js" />
+        <option value="$PROJECT_DIR$/src/reducers/userReducers.js" />
+        <option value="$PROJECT_DIR$/src/scene/HomeScene/HomeScene.js" />
+        <option value="$PROJECT_DIR$/src/scene/SearchRouteScene/SearchRouteScene.js" />
+        <option value="$PROJECT_DIR$/src/scene/SearchRouteScene/ItemsBooking.js" />
+        <option value="$PROJECT_DIR$/src/service/api/BaseAPI.js" />
       </list>
     </option>
   </component>
@@ -207,7 +219,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -228,6 +240,24 @@
             <path>
               <item name="xedike_web" type="b2602c69:ProjectViewProjectNode" />
               <item name="xedike_web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xedike_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xedike_web" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xedike_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xedike_web" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@types" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xedike_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xedike_web" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@types" type="462c0819:PsiDirectoryNode" />
+              <item name="babel__core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xedike_web" type="b2602c69:ProjectViewProjectNode" />
@@ -272,14 +302,25 @@
               <item name="xedike_web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="RegisterComponents" type="462c0819:PsiDirectoryNode" />
+              <item name="SearchComponent" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xedike_web" type="b2602c69:ProjectViewProjectNode" />
               <item name="xedike_web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="SearchComponent" type="462c0819:PsiDirectoryNode" />
+              <item name="contants" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xedike_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xedike_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xedike_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xedike_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xedike_web" type="b2602c69:ProjectViewProjectNode" />
@@ -324,23 +365,7 @@
               <item name="xedike_web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="scene" type="462c0819:PsiDirectoryNode" />
-              <item name="DriverScene" type="462c0819:PsiDirectoryNode" />
-              <item name="CreateRouteScene" type="462c0819:PsiDirectoryNode" />
-              <item name="CreateTripsForDriver" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xedike_web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xedike_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="scene" type="462c0819:PsiDirectoryNode" />
               <item name="HomeScene" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="xedike_web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="xedike_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="scene" type="462c0819:PsiDirectoryNode" />
-              <item name="NotFound404Scene" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="xedike_web" type="b2602c69:ProjectViewProjectNode" />
@@ -361,6 +386,12 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xedike_web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xedike_web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ultils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -497,6 +528,8 @@
       <workItem from="1563500264831" duration="4969000" />
       <workItem from="1563619965153" duration="6499000" />
       <workItem from="1563723220784" duration="1068000" />
+      <workItem from="1563766035908" duration="6231000" />
+      <workItem from="1563846756158" duration="1448000" />
     </task>
     <task id="LOCAL-00001" summary="s">
       <created>1558663023387</created>
@@ -691,19 +724,19 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129318000" />
+    <option name="totallyTimeSpent" value="139668000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23044397" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32771084" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32719395" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -711,7 +744,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49736565" weight="0.2936078" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50263435" side_tool="true" weight="0.32827735" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4926238" weight="0.24377032" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4926238" visible="true" weight="0.24377032" />
       <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -761,16 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scene/HomeScene/HomeScene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -847,80 +870,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/api/Auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scene/SearchRouteScene/SearchRouteScene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="34" column="6" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@types/babel__core/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8823">
           <caret line="530" column="8" selection-start-line="530" selection-start-column="8" selection-end-line="530" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/contants/tripContants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/contants/userContants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/userActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="78" column="16" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SearchComponent/SearchComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1291">
-          <caret line="29" column="10" lean-forward="true" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scene/SearchRouteScene/ResultRouteScene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -941,16 +894,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/tripActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -962,13 +905,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/tripReducers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -999,23 +935,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/userReducers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="n#!!block;n#users#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/Authentication.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/helpers/auth.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1030,40 +949,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/api/BaseAPI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="38" column="36" lean-forward="true" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/appRoute/AppUrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scene/DriverScene/CreateRouteScene/CreateRouteScene.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/CreateProfileDriver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="45" column="59" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="221">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1071,36 +960,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scene/DriverScene/CreateRouteScene/CreateTripsForDriver/CreateTripsForDriver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="43" column="134" selection-start-line="43" selection-start-column="134" selection-end-line="43" selection-end-column="134" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/MenuProfile/InformationPersonal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scene/SearchRouteScene/ItemsBooking.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="22" selection-end-column="10" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -1150,34 +1009,208 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/service/tripsService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
+        <state relative-caret-position="510">
           <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/usersService.js">
+    <entry file="file://$PROJECT_DIR$/src/scene/DriverScene/CreateRouteScene/CreateRouteScene.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/MenuProfile/InformationCar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2553">
-          <caret line="183" selection-start-line="183" selection-end-line="192" selection-end-column="66" />
+        <state relative-caret-position="510">
+          <caret line="30" column="52" selection-start-line="30" selection-start-column="52" selection-end-line="30" selection-end-column="52" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/MenuProfile/HistoryRoute.js">
+    <entry file="file://$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/CreateProfileDriver.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="26" column="20" selection-start-line="26" selection-start-column="23" selection-end-line="39" selection-end-column="25" />
+        <state relative-caret-position="952">
+          <caret line="56" column="59" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/MenuProfile/InformationPersonal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scene/DriverScene/CreateRouteScene/CreateTripsForDriver/CreateTripsForDriver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="213" column="84" lean-forward="true" selection-start-line="213" selection-start-column="84" selection-end-line="213" selection-end-column="84" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/MenuProfile/InformationCar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="55" column="25" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/contants/tripContants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="49" lean-forward="true" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/tripActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="55" column="25" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scene/SearchRouteScene/ResultRouteScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/userActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/contants/userContants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/tripReducers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scene/DriverScene/CreateProfileScene/MenuProfile/HistoryRoute.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1666">
+          <caret line="102" column="103" selection-start-line="102" selection-start-column="103" selection-end-line="102" selection-end-column="103" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SearchComponent/SearchComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/Authentication.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/userReducers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="n#!!block;n#users#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scene/HomeScene/HomeScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scene/SearchRouteScene/SearchRouteScene.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="133" column="92" selection-start-line="133" selection-start-column="92" selection-end-line="133" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/usersService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scene/SearchRouteScene/ItemsBooking.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/api/Auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/api/BaseAPI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="57" column="32" lean-forward="true" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

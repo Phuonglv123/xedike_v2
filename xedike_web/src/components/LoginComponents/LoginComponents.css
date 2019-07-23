@@ -8,7 +8,8 @@
     color: #1890ff; }
 #loginComponent #components-form-demo-normal-login .login-form {
   max-width: 80%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  line-height: 1; }
 #loginComponent #components-form-demo-normal-login .login-form-forgot {
   float: right; }
 #loginComponent #components-form-demo-normal-login .login-form-button {

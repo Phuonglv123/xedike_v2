@@ -3,6 +3,7 @@ import {Button, Card, Col, Form, Input, Row, Select} from "antd";
 import './ItemsBooking.css';
 import {connect} from "react-redux";
 import TripsService from "../../service/tripsService";
+import usersService from "../../service/usersService";
 
 const {Option} = Select;
 
@@ -15,6 +16,11 @@ class ItemsBooking extends Component {
             paymentMethod: null,
             notes: null,
         }
+    }
+
+    async componentDidMount(): void {
+        let res = await usersService.getDetailsDriver(this.props.driverId);
+        console.log(res)
     }
 
     handleChange(e) {
@@ -35,7 +41,6 @@ class ItemsBooking extends Component {
             paymentMethod: this.state.paymentMethod,
             notes: this.state.notes,
         });
-        console.log(res)
     };
 
     render() {

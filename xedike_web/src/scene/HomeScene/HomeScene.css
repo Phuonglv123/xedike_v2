@@ -5,191 +5,147 @@
   padding: 30px;
   width: 90%;
   height: 100px;
-  background-color: #f8c13c;
-}
+  background-color: #f8c13c; }
 .component-home .home-list-route {
   background-color: #fafafa;
-  width: 100%;
-}
-.component-home .home-list-route .card-list-route {
-  height: auto;
-  width: 90%;
-  margin: 0 auto;
-}
-.component-home .home-list-route .card-list-route .list-route-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #cccccc7a;
-  margin: 0 5px 0 5px;
-  padding: 10px;
-}
-.component-home .home-list-route .card-list-route .list-route-item .name-fee {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.component-home .home-list-route .card-list-route .list-route-item .name-fee .fee-ticket {
-  margin-right: 20px;
-  font-size: 15px;
-  font-weight: bold;
-  color: rgba(0, 0, 0, 0.65);
-}
-.component-home .home-list-route .card-list-route .list-route-item .name-location .icon-location {
-  margin-right: 20px;
-  margin-left: 20px;
-}
-.component-home .home-list-route .card-list-route .list-route-item .name-location span {
-  font-weight: bold;
-  font-size: 15px;
-  color: rgba(0, 0, 0, 0.65);
-}
-.component-home .home-list-route .card-list-route .list-route-item .name-location span:last-child {
-  color: black;
-}
+  width: 100%; }
+  .component-home .home-list-route .card-list-route {
+    height: auto;
+    width: 90%;
+    margin: 0 auto; }
+    .component-home .home-list-route .card-list-route .list-route-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #cccccc7a;
+      margin: 0 5px 0 5px;
+      padding: 10px; }
+      .component-home .home-list-route .card-list-route .list-route-item .name-fee {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        .component-home .home-list-route .card-list-route .list-route-item .name-fee .fee-ticket {
+          margin-right: 20px;
+          font-size: 15px;
+          font-weight: bold;
+          color: rgba(0, 0, 0, 0.65); }
+      .component-home .home-list-route .card-list-route .list-route-item .name-location .icon-location {
+        margin-right: 20px;
+        margin-left: 20px; }
+      .component-home .home-list-route .card-list-route .list-route-item .name-location span {
+        font-weight: bold;
+        font-size: 15px;
+        color: rgba(0, 0, 0, 0.65); }
+      .component-home .home-list-route .card-list-route .list-route-item .name-location span:last-child {
+        color: black; }
 .component-home .introduce-home .text-animation {
   margin: 10em auto;
-  text-align: center;
-}
-.component-home .introduce-home .text-animation span {
-  border-right: 3px solid black;
-  font-size: 30px;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  display: block;
-  width: 25em;
-  margin-left: auto;
-  margin-right: auto;
-}
-.component-home .introduce-home .text-animation .animation-type {
-  animation: typeMsg 7s steps(40) 1s 1 normal both, curserAnim 500ms steps(40) infinite normal;
-}
+  text-align: center; }
+  .component-home .introduce-home .text-animation span {
+    border-right: 3px solid black;
+    font-size: 30px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    width: 25em;
+    margin-left: auto;
+    margin-right: auto; }
+  .component-home .introduce-home .text-animation .animation-type {
+    animation: typeMsg 7s steps(40) 1s 1 normal both, curserAnim 500ms steps(40) infinite normal; }
 .component-home .introduce-home .card-intro {
   bottom: 0;
   height: 158px;
   width: 100%;
-  z-index: 1;
-}
-.component-home .introduce-home .card-intro .background-intro {
-  background: url("../../ultils/images/skyline-vxr-new.png") bottom !important;
-  background-position: 0 0;
-  animation: animatedBackground 10s linear infinite;
-  -moz-animation: animatedBackground 10s linear infinite;
-  -webkit-animation: animatedBackground 10s linear infinite;
-  -ms-animation: animatedBackground 10s linear infinite;
-  -o-animation: animatedBackground 10s linear infinite;
-  width: 100%;
-  z-index: 1;
-  position: absolute;
-  height: 158px;
-}
-.component-home .introduce-home .card-intro .bus-img {
-  background: url("../../ultils/images/bus-vxr.png") !important;
-  position: absolute;
-  bottom: -42em;
-  left: 40%;
-  z-index: 2;
-  width: 257px !important;
-  height: 77px !important;
-}
+  z-index: 1; }
+  .component-home .introduce-home .card-intro .background-intro {
+    background: url("../../ultils/images/skyline-vxr-new.png") bottom !important;
+    background-position: 0 0;
+    animation: animatedBackground 10s linear infinite;
+    -moz-animation: animatedBackground 10s linear infinite;
+    -webkit-animation: animatedBackground 10s linear infinite;
+    -ms-animation: animatedBackground 10s linear infinite;
+    -o-animation: animatedBackground 10s linear infinite;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    height: 158px; }
+  .component-home .introduce-home .card-intro .bus-img {
+    background: url("../../ultils/images/bus-vxr.png") !important;
+    position: absolute;
+    bottom: -42em;
+    left: 40%;
+    z-index: 2;
+    width: 257px !important;
+    height: 77px !important; }
 .component-home .take-care {
   width: 100%;
-  background-color: white;
-}
-.component-home .take-care .text-care {
-  text-align: center;
-  padding: 40px;
-}
-.component-home .take-care .text-care span {
-  font-size: 30px;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  display: block;
-}
-.component-home .take-care .card-take-care {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 0 auto;
-  padding: 30px;
-  background-color: #cccccc6b;
-}
-.component-home .take-care .card-take-care .care-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.component-home .take-care .card-take-care .care-item .icon {
-  font-size: 72px;
-  margin-right: 20px;
-}
-.component-home .take-care .card-take-care .care-item .item {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-}
-.component-home .take-care .card-take-care .care-item .item span {
-  font-size: 26px;
-  font-weight: 500;
-}
+  background-color: white; }
+  .component-home .take-care .text-care {
+    text-align: center;
+    padding: 40px; }
+    .component-home .take-care .text-care span {
+      font-size: 30px;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      display: block; }
+  .component-home .take-care .card-take-care {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #cccccc6b; }
+    .component-home .take-care .card-take-care .care-item {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .component-home .take-care .card-take-care .care-item .icon {
+        font-size: 72px;
+        margin-right: 20px; }
+      .component-home .take-care .card-take-care .care-item .item {
+        display: grid;
+        justify-content: center;
+        align-items: center; }
+        .component-home .take-care .card-take-care .care-item .item span {
+          font-size: 26px;
+          font-weight: 500; }
 
 @keyframes animatedBackground {
   0% {
-    background-position: 0 0;
-  }
+    background-position: 0 0; }
   100% {
-    background-position: -300px 0;
-  }
-}
+    background-position: -300px 0; } }
 @-moz-keyframes animatedBackground {
   0% {
-    background-position: 0 0;
-  }
+    background-position: 0 0; }
   100% {
-    background-position: -300px 0;
-  }
-}
+    background-position: -300px 0; } }
 @-webkit-keyframes animatedBackground {
   0% {
-    background-position: 0 0;
-  }
+    background-position: 0 0; }
   100% {
-    background-position: -300px 0;
-  }
-}
+    background-position: -300px 0; } }
 @-ms-keyframes animatedBackground {
   0% {
-    background-position: 0 0;
-  }
+    background-position: 0 0; }
   100% {
-    background-position: -300px 0;
-  }
-}
+    background-position: -300px 0; } }
 @-o-keyframes animatedBackground {
   0% {
-    background-position: 0 0;
-  }
+    background-position: 0 0; }
   100% {
-    background-position: -300px 0;
-  }
-}
+    background-position: -300px 0; } }
 @keyframes typeMsg {
   0% {
-    width: 0;
-  }
+    width: 0; }
   100% {
-    width: 20em;
-  }
-}
+    width: 20em; } }
 @keyframes curserAnim {
   0% {
-    border-right-color: black;
-  }
+    border-right-color: black; }
   100% {
-    border-right-color: transparent;
-  }
-}
+    border-right-color: transparent; } }
 
 /*# sourceMappingURL=HomeScene.css.map */

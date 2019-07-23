@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Card, Checkbox, Col, Form, Icon, Input, Row} from "antd";
+import {Button, Card, Checkbox, Col, Form, Icon, Input, Row, DatePicker} from "antd";
 import tripsService from "../../../../service/tripsService";
 import AppUrl from "../../../../components/appRoute/AppUrl";
 
@@ -68,6 +68,7 @@ class CreateTripsForDriver extends Component {
                                         }],
                                     })(
                                         <Input
+                                            size={"large"}
                                             prefix={<Icon type="environment"
                                                           style={{color: 'rgba(0,0,0,.25)'}}/>}
                                             // value={this.state.locationFrom}
@@ -83,6 +84,7 @@ class CreateTripsForDriver extends Component {
                                         rules: [{required: true, message: 'Please input location to!'}],
                                     })(
                                         <Input
+                                            size={"large"}
                                             prefix={<Icon type="environment"
                                                           style={{color: 'rgba(0,0,0,.25)'}}/>}
                                             // value={this.state.locationTo}
@@ -97,13 +99,14 @@ class CreateTripsForDriver extends Component {
                                     {getFieldDecorator('Start Time', {initialValue: this.state.startTime}, {
                                         rules: [{required: true, message: 'Please input location to!'}],
                                     })(
-                                        <Input
-                                            prefix={<Icon type="calendar"
-                                                          style={{color: 'rgba(0,0,0,.25)'}}/>}
-                                            // value={this.state.startTime}
-                                            name='startTime'
-                                            onChange={this.handleChange.bind(this)}
-                                        />,
+                                        <DatePicker size={"large"} style={{width: "100%"}} prefix={<Icon type="calendar"
+                                                                                                         style={{color: 'rgba(0,0,0,.25)'}}/>}
+                                                    showTime
+                                                    placeholder="Select start time" onChange={(value, dateString) => {
+                                            this.setState({
+                                                startTime: dateString
+                                            })
+                                        }}/>
                                     )}
                                 </Form.Item>
                             </Col>
@@ -112,13 +115,14 @@ class CreateTripsForDriver extends Component {
                                     {getFieldDecorator('End Time', {initialValue: this.state.endTime}, {
                                         rules: [{required: true, message: 'Please input location to!'}],
                                     })(
-                                        <Input
-                                            prefix={<Icon type="calendar"
-                                                          style={{color: 'rgba(0,0,0,.25)'}}/>}
-                                            // value={this.state.endTime}
-                                            name='endTime'
-                                            onChange={this.handleChange.bind(this)}
-                                        />,
+                                        <DatePicker size={"large"} style={{width: "100%"}} prefix={<Icon type="calendar"
+                                                                                                         style={{color: 'rgba(0,0,0,.25)'}}/>}
+                                                    showTime
+                                                    placeholder="Select end time" onChange={(value, dateString) => {
+                                            this.setState({
+                                                endTime: dateString
+                                            })
+                                        }}/>,
                                     )}
                                 </Form.Item>
                             </Col>
@@ -128,6 +132,7 @@ class CreateTripsForDriver extends Component {
                                         rules: [{required: true, message: 'Please input location to!'}],
                                     })(
                                         <Input
+                                            size={"large"}
                                             prefix={<Icon type="skin"
                                                           style={{color: 'rgba(0,0,0,.25)'}}/>}
                                             // value={this.state.availableSeats}
@@ -143,6 +148,7 @@ class CreateTripsForDriver extends Component {
                                         rules: [{required: true, message: 'Please input location to!'}],
                                     })(
                                         <Input
+                                            size={"large"}
                                             prefix={<Icon type="dollar"
                                                           style={{color: 'rgba(0,0,0,.25)'}}/>}
                                             // value={this.state.fee}
